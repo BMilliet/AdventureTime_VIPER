@@ -11,7 +11,7 @@ class LoginViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    setUp()
+    setUpView()
   }
 
   @objc private func checkKeyField() {
@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
     startSpinnerAnimation()
   }
 
-  private func setUp() {
+  private func setUpView() {
     navigationController?.setNavigationBarHidden(true, animated: true)
     activitySpinner.isHidden = true
     loginButton.isEnabled = false
@@ -30,12 +30,12 @@ class LoginViewController: UIViewController {
     keyField.addTarget(self, action: #selector(checkKeyField), for: .editingChanged)
   }
 
-  private func startSpinnerAnimation() {
+  func startSpinnerAnimation() {
     activitySpinner.isHidden = false
     activitySpinner.startAnimating()
   }
 
-  private func stopSpinner() {
+  func stopSpinner() {
     activitySpinner.isHidden = true
     activitySpinner.stopAnimating()
   }
