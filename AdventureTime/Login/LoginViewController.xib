@@ -12,6 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="AdventureTime" customModuleProvider="target">
             <connections>
+                <outlet property="activitySpinner" destination="Z3B-ap-uPt" id="qMo-qx-GIQ"/>
+                <outlet property="errorLabel" destination="Ef1-Z4-ssC" id="Jz0-g7-3BB"/>
+                <outlet property="keyField" destination="Ifl-Km-C4I" id="TKf-d5-bqQ"/>
+                <outlet property="loginButton" destination="ETi-Tn-01Z" id="HEr-Rm-Grx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -110,6 +114,9 @@ To login you need an key, if you dont have one go to themoviedb.org and you can 
                                     <state key="normal" title="Login!">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <connections>
+                                        <action selector="loginButtonAction:" destination="-1" eventType="touchUpInside" id="T4B-WM-557"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
