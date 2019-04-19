@@ -4,10 +4,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-
+  var navigationController: UINavigationController?
+  var loginViewController: LoginViewController?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+
+    loginViewController = LoginViewController(nibName: "LoginViewController", bundle: .main)
+
+    navigationController = UINavigationController(rootViewController: loginViewController!)
+
+    window = UIWindow(frame: UIScreen.main.bounds)
+    window?.rootViewController = navigationController
+    window?.makeKeyAndVisible()
+
     return true
   }
 
