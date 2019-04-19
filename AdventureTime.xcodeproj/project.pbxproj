@@ -12,6 +12,8 @@
 		15B76FFB226A6E0B0044F9C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15B76FF9226A6E0B0044F9C6 /* LaunchScreen.storyboard */; };
 		15B77006226A6E0B0044F9C6 /* AdventureTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B77005226A6E0B0044F9C6 /* AdventureTimeTests.swift */; };
 		15B77011226A6E0B0044F9C6 /* AdventureTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B77010226A6E0B0044F9C6 /* AdventureTimeUITests.swift */; };
+		15B77021226A6F970044F9C6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B7701F226A6F970044F9C6 /* LoginViewController.swift */; };
+		15B77022226A6F970044F9C6 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15B77020226A6F970044F9C6 /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		15B7700C226A6E0B0044F9C6 /* AdventureTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdventureTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15B77010226A6E0B0044F9C6 /* AdventureTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureTimeUITests.swift; sourceTree = "<group>"; };
 		15B77012226A6E0B0044F9C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15B7701F226A6F970044F9C6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		15B77020226A6F970044F9C6 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 		15B76FEF226A6E0A0044F9C6 /* AdventureTime */ = {
 			isa = PBXGroup;
 			children = (
+				15B7701E226A6F790044F9C6 /* Login */,
 				15B76FF0226A6E0A0044F9C6 /* AppDelegate.swift */,
 				15B76FF7226A6E0B0044F9C6 /* Assets.xcassets */,
 				15B76FF9226A6E0B0044F9C6 /* LaunchScreen.storyboard */,
@@ -117,6 +122,15 @@
 				15B77012226A6E0B0044F9C6 /* Info.plist */,
 			);
 			path = AdventureTimeUITests;
+			sourceTree = "<group>";
+		};
+		15B7701E226A6F790044F9C6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				15B7701F226A6F970044F9C6 /* LoginViewController.swift */,
+				15B77020226A6F970044F9C6 /* LoginViewController.xib */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +239,7 @@
 			files = (
 				15B76FFB226A6E0B0044F9C6 /* LaunchScreen.storyboard in Resources */,
 				15B76FF8226A6E0B0044F9C6 /* Assets.xcassets in Resources */,
+				15B77022226A6F970044F9C6 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15B77021226A6F970044F9C6 /* LoginViewController.swift in Sources */,
 				15B76FF1226A6E0A0044F9C6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
