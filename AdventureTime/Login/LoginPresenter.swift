@@ -15,18 +15,10 @@ class LoginPresenter {
       case .failure(let error):
         print("got unexpected statuscode: \(error)")
       }
-      self.showAllSeasons()
     }
   }
 
   func isDataAvailable() -> Bool {
     return allSeasons != nil
-  }
-
-  func showAllSeasons() {
-    let navigationController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController
-    if isDataAvailable() {
-      Router(navigation: navigationController!).goToAllSeasonsView(with: allSeasons!)
-    }
   }
 }

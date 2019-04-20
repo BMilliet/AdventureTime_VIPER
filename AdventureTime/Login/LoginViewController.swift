@@ -22,6 +22,21 @@ class LoginViewController: UIViewController {
   @IBAction func loginButtonAction(_ sender: UIButton) {
     startSpinnerAnimation()
     presenter.makeRequestWith(key: self.keyField.text!)
+
+    //refactor
+    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+      self.performPushView()
+    })
+  }
+
+  func performPushView() {
+    stopSpinner()
+    guard let list = self.presenter.allSeasons else {return}
+    goToNextView(list)
+  }
+
+  func goToNextView(_ list: AllSeasons) {
+    Router(navigation: navigationController!).goToAllSeasonsView(with: list)
   }
 
   private func setUpView() {
