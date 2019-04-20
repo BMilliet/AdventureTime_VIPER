@@ -2,26 +2,26 @@ import Foundation
 
 struct UrlManager {
 
-  private let APIBaseUrl = "https://api.themoviedb.org/3"
-  private let listOption = "/tv/15260"
-  private let movieDetailOption = "/movie/"
-  private let seasonPrefix = "/season/"
-  private let keyPrefix = "?api_key="
-  private let lenguage = "&language=en-US"
+  static private let APIBaseUrl = "https://api.themoviedb.org/3"
+  static private let listOption = "/tv/15260"
+  static private let movieDetailOption = "/movie/"
+  static private let seasonPrefix = "/season/"
+  static private let keyPrefix = "?api_key="
+  static private let lenguage = "&language=en-US"
 
-  func completeInfo(userKey: String) -> URL? {
+  static func completeInfo(userKey: String) -> URL? {
     let path = buildPath([APIBaseUrl,listOption,keyPrefix,userKey,lenguage])
     let url = URL(string: path)
     return url
   }
 
-  func season(number: Int, userKey: String) -> URL? {
+  static func season(number: Int, userKey: String) -> URL? {
     let stringURL = buildPath([APIBaseUrl,seasonPrefix,String(number),keyPrefix,userKey,lenguage])
     let url = URL(string: stringURL)
     return url
   }
 
-  private func buildPath(_ array: [String]) -> String {
+  static private func buildPath(_ array: [String]) -> String {
     return array.joined()
   }
 }

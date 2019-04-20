@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
 
   @IBAction func loginButtonAction(_ sender: UIButton) {
     startSpinnerAnimation()
-    presenter.makeRequestWith(key: keyField.text!)
+    presenter.makeRequestWith(key: self.keyField.text!)
   }
 
   private func setUpView() {
