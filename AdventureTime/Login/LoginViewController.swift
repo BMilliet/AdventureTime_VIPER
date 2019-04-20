@@ -20,6 +20,11 @@ class LoginViewController: UIViewController {
 
   @IBAction func loginButtonAction(_ sender: UIButton) {
     startSpinnerAnimation()
+    presenter.makeRequestWith(key: keyField.text!)
+  }
+
+  func test(result: String) {
+    print(result)
   }
 
   private func setUpView() {

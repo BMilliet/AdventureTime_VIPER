@@ -15,12 +15,6 @@ struct UrlManager {
     return url
   }
 
-  func tryConnection(with key: String) -> URL? {
-    let path = buildPath([APIBaseUrl,listOption,keyPrefix,key,lenguage])
-    let url = URL(string: path)
-    return url
-  }
-
   func season(number: Int, userKey: String) -> URL? {
     let stringURL = buildPath([APIBaseUrl,seasonPrefix,String(number),keyPrefix,userKey,lenguage])
     let url = URL(string: stringURL)

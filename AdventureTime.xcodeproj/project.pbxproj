@@ -21,6 +21,10 @@
 		15B77031226A85290044F9C6 /* AllSeasonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B7702F226A85290044F9C6 /* AllSeasonsViewController.swift */; };
 		15B77032226A85290044F9C6 /* AllSeasonsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15B77030226A85290044F9C6 /* AllSeasonsViewController.xib */; };
 		15B77035226A86730044F9C6 /* UrlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B77034226A86730044F9C6 /* UrlManager.swift */; };
+		15B77037226A9F2E0044F9C6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B77036226A9F2E0044F9C6 /* API.swift */; };
+		15B77039226B4AAB0044F9C6 /* JsonObjectBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B77038226B4AAB0044F9C6 /* JsonObjectBuilder.swift */; };
+		15B7703C226B54A20044F9C6 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B7703B226B54A20044F9C6 /* Season.swift */; };
+		15B7703E226B55740044F9C6 /* AllSeasons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B7703D226B55740044F9C6 /* AllSeasons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,10 @@
 		15B7702F226A85290044F9C6 /* AllSeasonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSeasonsViewController.swift; sourceTree = "<group>"; };
 		15B77030226A85290044F9C6 /* AllSeasonsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllSeasonsViewController.xib; sourceTree = "<group>"; };
 		15B77034226A86730044F9C6 /* UrlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlManager.swift; sourceTree = "<group>"; };
+		15B77036226A9F2E0044F9C6 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		15B77038226B4AAB0044F9C6 /* JsonObjectBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonObjectBuilder.swift; sourceTree = "<group>"; };
+		15B7703B226B54A20044F9C6 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
+		15B7703D226B55740044F9C6 /* AllSeasons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSeasons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +119,7 @@
 		15B76FEF226A6E0A0044F9C6 /* AdventureTime */ = {
 			isa = PBXGroup;
 			children = (
+				15B7703A226B54040044F9C6 /* Models */,
 				15B77033226A864C0044F9C6 /* Infra */,
 				15B77023226A732B0044F9C6 /* Extensions */,
 				15B7702E226A84F90044F9C6 /* AllSeasons */,
@@ -174,8 +183,19 @@
 			isa = PBXGroup;
 			children = (
 				15B77034226A86730044F9C6 /* UrlManager.swift */,
+				15B77036226A9F2E0044F9C6 /* API.swift */,
+				15B77038226B4AAB0044F9C6 /* JsonObjectBuilder.swift */,
 			);
 			path = Infra;
+			sourceTree = "<group>";
+		};
+		15B7703A226B54040044F9C6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				15B7703B226B54A20044F9C6 /* Season.swift */,
+				15B7703D226B55740044F9C6 /* AllSeasons.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,13 +330,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15B7703E226B55740044F9C6 /* AllSeasons.swift in Sources */,
 				15B77029226A7FCE0044F9C6 /* LoginPresenter.swift in Sources */,
 				15B77035226A86730044F9C6 /* UrlManager.swift in Sources */,
 				15B77021226A6F970044F9C6 /* LoginViewController.swift in Sources */,
 				15B77031226A85290044F9C6 /* AllSeasonsViewController.swift in Sources */,
 				15B7702B226A802B0044F9C6 /* String.swift in Sources */,
+				15B7703C226B54A20044F9C6 /* Season.swift in Sources */,
 				15B76FF1226A6E0A0044F9C6 /* AppDelegate.swift in Sources */,
+				15B77039226B4AAB0044F9C6 /* JsonObjectBuilder.swift in Sources */,
 				15B77025226A733F0044F9C6 /* UIViewController.swift in Sources */,
+				15B77037226A9F2E0044F9C6 /* API.swift in Sources */,
 				15B7702D226A80490044F9C6 /* UITextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
