@@ -35,6 +35,10 @@ class LoginViewController: UIViewController, LoginViewControllerDelegate {
     keyField.addTarget(self, action: #selector(checkKeyField), for: .editingChanged)
   }
 
+  func showErrorMessage() {
+    errorLabel.isHidden = false
+  }
+
   func startSpinnerAnimation() {
     activitySpinner.isHidden = false
     activitySpinner.startAnimating()

@@ -42,6 +42,7 @@ class LoginPresenter {
   }
 
   func onFailRequest() {
+    viewController?.showErrorMessage()
     viewController?.stopSpinnerAnimation()
     print("Unexpected resquest status code: \(String(describing: apiError))")
   }
