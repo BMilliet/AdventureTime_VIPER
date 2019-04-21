@@ -1,6 +1,12 @@
 import UIKit
 
-class LoginViewController: UIViewController {
+protocol LoginViewControllerDelegate {
+  func goToNextView(_ list: AllSeasons)
+  func stopSpinnerAnimation()
+  func startSpinnerAnimation()
+}
+
+class LoginViewController: UIViewController, LoginViewControllerDelegate {
 
   @IBOutlet weak var errorLabel: UILabel!
   @IBOutlet weak var keyField: UITextField!
@@ -20,19 +26,7 @@ class LoginViewController: UIViewController {
   }
 
   @IBAction func loginButtonAction(_ sender: UIButton) {
-    startSpinnerAnimation()
-    presenter.makeRequestWith(key: self.keyField.text!)
-
-    //refactor
-    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
-      self.performPushView()
-    })
-  }
-
-  func performPushView() {
-    stopSpinner()
-    guard let list = self.presenter.allSeasons else {return}
-    goToNextView(list)
+    presenter.buttonPushed(with: keyField.text)
   }
 
   func goToNextView(_ list: AllSeasons) {
@@ -52,7 +46,7 @@ class LoginViewController: UIViewController {
     activitySpinner.startAnimating()
   }
 
-  func stopSpinner() {
+  func stopSpinnerAnimation() {
     activitySpinner.isHidden = true
     activitySpinner.stopAnimating()
   }
