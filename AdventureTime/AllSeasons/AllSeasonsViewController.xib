@@ -29,13 +29,13 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6q1-9C-eb8">
-                                    <rect key="frame" x="255" y="22" width="112" height="30"/>
+                                    <rect key="frame" x="273" y="22" width="94" height="30"/>
                                     <color key="backgroundColor" red="0.86287645729999995" green="0.097808176450000006" blue="0.26266452890000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="112" id="5no-vq-3yh"/>
-                                        <constraint firstAttribute="height" constant="30" id="aeg-y2-In5"/>
+                                        <constraint firstAttribute="height" constant="30" id="a3a-6v-xfd"/>
+                                        <constraint firstAttribute="width" constant="94" id="ju4-7m-cKU"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
                                     <state key="normal" title="Logout">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
@@ -43,10 +43,10 @@
                             </subviews>
                             <color key="backgroundColor" red="0.0" green="0.73297846499999997" blue="0.6799201091" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="6q1-9C-eb8" secondAttribute="bottom" constant="8" id="1N1-YN-kXB"/>
-                                <constraint firstItem="6q1-9C-eb8" firstAttribute="top" secondItem="iih-iW-Rr7" secondAttribute="top" constant="22" id="Fod-cL-NkP"/>
                                 <constraint firstAttribute="height" constant="60" id="L6S-1d-dcf"/>
-                                <constraint firstAttribute="trailing" secondItem="6q1-9C-eb8" secondAttribute="trailing" constant="8" id="rS3-J0-fRb"/>
+                                <constraint firstAttribute="trailing" secondItem="6q1-9C-eb8" secondAttribute="trailing" constant="8" id="SKF-nK-TV5"/>
+                                <constraint firstItem="6q1-9C-eb8" firstAttribute="top" secondItem="iih-iW-Rr7" secondAttribute="top" constant="22" id="ZfF-eS-E7r"/>
+                                <constraint firstAttribute="bottom" secondItem="6q1-9C-eb8" secondAttribute="bottom" constant="8" id="qZ0-KH-Dje"/>
                             </constraints>
                         </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j4B-Id-bKs">

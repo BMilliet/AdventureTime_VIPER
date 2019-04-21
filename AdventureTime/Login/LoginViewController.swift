@@ -1,11 +1,5 @@
 import UIKit
 
-protocol LoginViewControllerDelegate {
-  func goToNextView(_ list: AllSeasons)
-  func stopSpinnerAnimation()
-  func startSpinnerAnimation()
-}
-
 class LoginViewController: UIViewController, LoginViewControllerDelegate {
 
   @IBOutlet weak var errorLabel: UILabel!
