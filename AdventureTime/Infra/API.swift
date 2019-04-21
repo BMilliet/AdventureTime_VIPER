@@ -2,17 +2,12 @@ import Foundation
 
 class API {
 
-  enum RequestError: Error {
-    case jsonParsingError(Error)
-    case invalidStatusCode(Int)
-  }
+  typealias onSuccess = (_ statusCode: Int, _ response: Decodable) -> Void
+  typealias onError = (_ statusCode: Int, _ error: Error?) -> Void
 
-  enum RequestResult<T> {
-    case success(T)
-    case failure(RequestError)
-  }
+  private let session = URLSession.shared
 
-  static func makeRequest<T: Decodable>(url: URL, objectType: T.Type, completion: @escaping (RequestResult<T>) -> Void) {
+  func makeRequest<T: Decodable>(url: URL, objectType: T.Type, completion: @escaping (RequestResult<T>) -> Void) {
     let session = URLSession.shared
     let task = session.dataTask(with: url, completionHandler: { data, response, error in
       
@@ -32,4 +27,47 @@ class API {
     })
     task.resume()
   }
+
+  func execute<T: Decodable>(url: URL, objectType: T.Type, onSuccess: @escaping onSuccess, onError: @escaping onError) {
+    session.dataTask(with: url, completionHandler: { (data, response, error) in
+      let apiResponse = ApiResponse(data: data, response: response, error: error)
+      if apiResponse.isSuccess() {
+        onSuccess(apiResponse.statusCode(), apiResponse.jsonResponse(objectType))
+      } else {
+        onError(apiResponse.statusCode(), apiResponse.error)
+      }
+    }).resume()
+  }
+
+//-----------------------------
+  enum RequestError: Error {
+    case jsonParsingError(Error)
+    case invalidStatusCode(Int)
+  }
+
+  enum RequestResult<T> {
+    case success(T)
+    case failure(RequestError)
+  }
 }
+
+struct ApiResponse {
+  var data: Data?
+  var response: URLResponse?
+  var error: Error?
+
+  func jsonResponse<T: Decodable>(_ objectType: T.Type) -> T? {
+    let decodedObject = try! JSONDecoder().decode(objectType.self, from: data!)
+    return decodedObject
+  }
+
+  func statusCode() -> Int {
+    let httpResponse = response as? HTTPURLResponse
+    return httpResponse?.statusCode ?? 0
+  }
+
+  func isSuccess() -> Bool {
+    return statusCode() == 200
+  }
+}
+
