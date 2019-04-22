@@ -7,11 +7,11 @@ class LoginViewController: UIViewController, LoginViewControllerDelegate {
   @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
   @IBOutlet weak var loginButton: UIButton!
 
-  private let presenter = LoginPresenter()
+  private var presenter: LoginPresenter?
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    presenter.viewController = self
+    presenter = LoginPresenter(viewController: self, delegate: self)
     setUpView()
   }
 
@@ -20,11 +20,7 @@ class LoginViewController: UIViewController, LoginViewControllerDelegate {
   }
 
   @IBAction func loginButtonAction(_ sender: UIButton) {
-    presenter.buttonPushed(with: keyField.text)
-  }
-
-  func goToNextView(_ list: AllSeasons) {
-    Router(navigation: navigationController!).goToAllSeasonsView(with: list)
+    presenter?.buttonPushed()
   }
 
   private func setUpView() {

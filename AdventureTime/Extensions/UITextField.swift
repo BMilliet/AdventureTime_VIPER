@@ -7,4 +7,12 @@ extension UITextField {
     }
     return false
   }
+
+  func isFieldNil() -> Bool {
+    return self.text == nil
+  }
+
+  func cleanField() {
+    self.text = ""
+  }
 }

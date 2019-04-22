@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		159027C1226C095C00B3D493 /* LoginViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159027C0226C095C00B3D493 /* LoginViewControllerDelegate.swift */; };
+		1593C320226D1FCF00A7CCCF /* DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1593C31F226D1FCF00A7CCCF /* DispatchQueue.swift */; };
 		15B76FF1226A6E0A0044F9C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B76FF0226A6E0A0044F9C6 /* AppDelegate.swift */; };
 		15B76FF8226A6E0B0044F9C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15B76FF7226A6E0B0044F9C6 /* Assets.xcassets */; };
 		15B76FFB226A6E0B0044F9C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15B76FF9226A6E0B0044F9C6 /* LaunchScreen.storyboard */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		159027C0226C095C00B3D493 /* LoginViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerDelegate.swift; sourceTree = "<group>"; };
+		1593C31F226D1FCF00A7CCCF /* DispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueue.swift; sourceTree = "<group>"; };
 		15B76FED226A6E0A0044F9C6 /* AdventureTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdventureTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15B76FF0226A6E0A0044F9C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15B76FF7226A6E0B0044F9C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				15B77024226A733F0044F9C6 /* UIViewController.swift */,
 				15B7702A226A802B0044F9C6 /* String.swift */,
 				15B7702C226A80490044F9C6 /* UITextField.swift */,
+				1593C31F226D1FCF00A7CCCF /* DispatchQueue.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				15B77035226A86730044F9C6 /* UrlManager.swift in Sources */,
 				15B77021226A6F970044F9C6 /* LoginViewController.swift in Sources */,
 				15B77040226BA97B0044F9C6 /* Router.swift in Sources */,
+				1593C320226D1FCF00A7CCCF /* DispatchQueue.swift in Sources */,
 				15B77031226A85290044F9C6 /* AllSeasonsViewController.swift in Sources */,
 				15B7702B226A802B0044F9C6 /* String.swift in Sources */,
 				15B7703C226B54A20044F9C6 /* Season.swift in Sources */,

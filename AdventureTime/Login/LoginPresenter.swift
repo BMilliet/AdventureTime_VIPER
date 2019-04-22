@@ -3,22 +3,30 @@ import UIKit
 
 class LoginPresenter {
 
-  var viewController: LoginViewControllerDelegate?
-  var allSeasons: AllSeasons?
-  var apiError: API.RequestError?
+  var viewController: LoginViewController
+  var delegate: LoginViewControllerDelegate
 
-  func buttonPushed(with key: String?) {
-    viewController?.startSpinnerAnimation()
-    if key == nil {
-      viewController?.stopSpinnerAnimation()
-      return
+  init(viewController: LoginViewController, delegate: LoginViewControllerDelegate) {
+    self.viewController = viewController
+    self.delegate = delegate
+  }
+
+  func buttonPushed() {
+    delegate.startSpinnerAnimation()
+    if let key = viewController.keyField.text {
+      if isValidFormat(key) {
+        makeRequestWith(key: viewController.keyField.text!)
+        return
+      }
     }
-    //makeRequestWith(key: key!)
-    makeAnotherRequest(key: key!)
-//    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
-//      self.performAction()
-//    })
-    onFailRequest()
+    delegate.stopSpinnerAnimation()
+    viewController.keyField.cleanField()
+    viewController.loginButton.isEnabled = false
+  }
+
+  private func isValidFormat(_ string: String) -> Bool {
+    let pattern = "^[a-zA-Z0-9]*$"
+    return NSPredicate(format: "SELF MATCHES %@", pattern).evaluate(with: string)
   }
 
   private func makeRequestWith(key: String) {
@@ -26,41 +34,31 @@ class LoginPresenter {
     API().makeRequest(url: url!, objectType: AllSeasons.self) { (result: API.RequestResult) in
       switch result {
       case .success(let object):
-        self.allSeasons = object
+        DispatchQueue.executeFromMainThread {
+          self.onSuccessRequest(with: object)
+        }
       case .failure(let error):
-        self.apiError = error
+        DispatchQueue.executeFromMainThread {
+          self.onFailRequest(with: error)
+        }
       }
     }
   }
 
-  private func makeAnotherRequest(key: String) {
-    let url = UrlManager.completeInfo(userKey: key)
-    API().execute(url: url!, objectType: AllSeasons.self, onSuccess: {statusCode, response in
-      print("------------")
-      print(statusCode)
-      print(response)
-      self.onFailRequest()
-    }, onError: {statusCode, error in
-      print("------------")
-      print(statusCode)
-      print(error as Any)
-      //self.onFailRequest()
-    })
+  private func onSuccessRequest(with list: AllSeasons) {
+    delegate.stopSpinnerAnimation()
+    goToAllSeasonsView(list)
   }
 
-  func performAction() {
-    apiError == nil ? onSuccessRequest(): onFailRequest()
+  private func onFailRequest(with error: Error) {
+    delegate.showErrorMessage()
+    delegate.stopSpinnerAnimation()
+    print("Unexpected resquest status code: \(error))")
   }
 
-
-  func onSuccessRequest() {
-    viewController?.stopSpinnerAnimation()
-    viewController?.goToNextView(allSeasons!)
-  }
-
-  func onFailRequest() {
-    viewController?.showErrorMessage()
-    viewController?.stopSpinnerAnimation()
-    print("Unexpected resquest status code: \(String(describing: apiError))")
+  private func goToAllSeasonsView(_ list: AllSeasons) {
+    if let navigation = viewController.navigationController {
+      Router(navigation: navigation).goToAllSeasonsView(with: list)
+    }
   }
 }
