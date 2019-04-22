@@ -5,6 +5,7 @@ class LoginPresenter {
 
   var viewController: LoginViewController
   var delegate: LoginViewControllerDelegate
+  let validationRegex = "^[a-zA-Z0-9]*$"
 
   init(viewController: LoginViewController, delegate: LoginViewControllerDelegate) {
     self.viewController = viewController
@@ -14,19 +15,12 @@ class LoginPresenter {
   func buttonPushed() {
     delegate.startSpinnerAnimation()
     if let key = viewController.keyField.text {
-      if isValidFormat(key) {
-        makeRequestWith(key: viewController.keyField.text!)
+      if key.matchPattern(validationRegex) {
+        makeRequestWith(key: key)
         return
       }
     }
-    delegate.stopSpinnerAnimation()
-    viewController.keyField.cleanField()
-    viewController.loginButton.isEnabled = false
-  }
-
-  private func isValidFormat(_ string: String) -> Bool {
-    let pattern = "^[a-zA-Z0-9]*$"
-    return NSPredicate(format: "SELF MATCHES %@", pattern).evaluate(with: string)
+    onFieldError()
   }
 
   private func makeRequestWith(key: String) {
@@ -53,7 +47,15 @@ class LoginPresenter {
   private func onFailRequest(with error: Error) {
     delegate.showErrorMessage()
     delegate.stopSpinnerAnimation()
+    viewController.keyField.cleanField()
     print("Unexpected resquest status code: \(error))")
+  }
+
+  private func onFieldError() {
+    delegate.showErrorMessage()
+    delegate.stopSpinnerAnimation()
+    viewController.keyField.cleanField()
+    viewController.loginButton.isEnabled = false
   }
 
   private func goToAllSeasonsView(_ list: AllSeasons) {
