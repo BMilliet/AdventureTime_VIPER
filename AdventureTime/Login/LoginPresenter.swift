@@ -44,6 +44,7 @@ class LoginPresenter {
     delegate.showErrorMessage()
     delegate.stopSpinnerAnimation()
     delegate.cleanField()
+    delegate.disableButton()
     print("Unexpected resquest status code: \(error))")
   }
 
@@ -51,6 +52,6 @@ class LoginPresenter {
     delegate.showErrorMessage()
     delegate.stopSpinnerAnimation()
     delegate.cleanField()
-    //viewController.loginButton.isEnabled = false
+    delegate.disableButton()
   }
 }

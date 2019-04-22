@@ -50,9 +50,11 @@ class LoginViewController: UIViewController, LoginViewControllerDelegate {
     keyField.cleanField()
   }
 
+  func disableButton() {
+    loginButton.isEnabled = false
+  }
+
   func goToAllSeasonsView(_ list: AllSeasons) {
-    if let navigation = navigationController {
-      Router(navigation: navigation).goToAllSeasonsView(with: list)
-    }
+    Router(navigation: navigationController).goToAllSeasonsView(with: list)
   }
 }

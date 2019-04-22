@@ -1,9 +1,10 @@
 import UIKit
 
 protocol LoginViewControllerDelegate {
+  func cleanField()
+  func disableButton()
+  func showErrorMessage()
   func stopSpinnerAnimation()
   func startSpinnerAnimation()
-  func showErrorMessage()
-  func cleanField()
   func goToAllSeasonsView(_ list: AllSeasons)
 }
