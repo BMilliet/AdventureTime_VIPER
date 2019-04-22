@@ -27,6 +27,7 @@
 		15B7703C226B54A20044F9C6 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B7703B226B54A20044F9C6 /* Season.swift */; };
 		15B7703E226B55740044F9C6 /* AllSeasons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B7703D226B55740044F9C6 /* AllSeasons.swift */; };
 		15B77040226BA97B0044F9C6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B7703F226BA97B0044F9C6 /* Router.swift */; };
+		15E99ED6226DEAD0004C7882 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 15E99ED5226DEAD0004C7882 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		15B7703B226B54A20044F9C6 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 		15B7703D226B55740044F9C6 /* AllSeasons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSeasons.swift; sourceTree = "<group>"; };
 		15B7703F226BA97B0044F9C6 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		15E99ED5226DEAD0004C7882 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		15B76FEF226A6E0A0044F9C6 /* AdventureTime */ = {
 			isa = PBXGroup;
 			children = (
+				15E99ED4226DEA19004C7882 /* Support */,
 				15B7703A226B54040044F9C6 /* Models */,
 				15B77033226A864C0044F9C6 /* Infra */,
 				15B77023226A732B0044F9C6 /* Extensions */,
@@ -202,6 +205,14 @@
 				15B7703D226B55740044F9C6 /* AllSeasons.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		15E99ED4226DEA19004C7882 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				15E99ED5226DEAD0004C7882 /* Localizable.strings */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15E99ED6226DEAD0004C7882 /* Localizable.strings in Resources */,
 				15B76FFB226A6E0B0044F9C6 /* LaunchScreen.storyboard in Resources */,
 				15B77032226A85290044F9C6 /* AllSeasonsViewController.xib in Resources */,
 				15B76FF8226A6E0B0044F9C6 /* Assets.xcassets in Resources */,

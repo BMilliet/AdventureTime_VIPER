@@ -5,7 +5,7 @@ class LoginPresenter {
 
   var viewController: LoginViewController
   var delegate: LoginViewControllerDelegate
-  let validationRegex = "^[a-zA-Z0-9]*$"
+  let validation = "validateKeyRegex".localized()
 
   init(viewController: LoginViewController, delegate: LoginViewControllerDelegate) {
     self.viewController = viewController
@@ -15,7 +15,7 @@ class LoginPresenter {
   func buttonPushed() {
     delegate.startSpinnerAnimation()
     if let key = viewController.keyField.text {
-      if key.matchPattern(validationRegex) {
+      if key.matchPattern(validation) {
         makeRequestWith(key: key)
         return
       }

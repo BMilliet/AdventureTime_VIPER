@@ -28,6 +28,7 @@ class LoginViewController: UIViewController, LoginViewControllerDelegate {
     activitySpinner.isHidden = true
     loginButton.isEnabled = false
     loginButton.layer.cornerRadius = 25
+    errorLabel.text = "loginError".localized()
     keyField.addTarget(self, action: #selector(checkKeyField), for: .editingChanged)
   }
 
