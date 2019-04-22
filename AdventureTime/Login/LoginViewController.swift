@@ -11,7 +11,7 @@ class LoginViewController: UIViewController, LoginViewControllerDelegate {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    presenter = LoginPresenter(viewController: self, delegate: self)
+    presenter = LoginPresenter(delegate: self)
     setUpView()
   }
 
@@ -20,7 +20,7 @@ class LoginViewController: UIViewController, LoginViewControllerDelegate {
   }
 
   @IBAction func loginButtonAction(_ sender: UIButton) {
-    presenter?.buttonPushed()
+    presenter?.buttonPushed(with: keyField.text!)
   }
 
   private func setUpView() {
@@ -44,5 +44,15 @@ class LoginViewController: UIViewController, LoginViewControllerDelegate {
   func stopSpinnerAnimation() {
     activitySpinner.isHidden = true
     activitySpinner.stopAnimating()
+  }
+
+  func cleanField() {
+    keyField.cleanField()
+  }
+
+  func goToAllSeasonsView(_ list: AllSeasons) {
+    if let navigation = navigationController {
+      Router(navigation: navigation).goToAllSeasonsView(with: list)
+    }
   }
 }

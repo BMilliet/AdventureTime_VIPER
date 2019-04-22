@@ -12,9 +12,7 @@ class AllSeasonsViewController: UIViewController {
     super.init(nibName: "AllSeasonsViewController", bundle:nil)
   }
 
-  required init?(coder aDecoder: NSCoder) {
-    fatalError("")
-  }
+  required init?(coder aDecoder: NSCoder) {fatalError()}
 
   override func viewDidLoad() {
     super.viewDidLoad()

@@ -3,22 +3,18 @@ import UIKit
 
 class LoginPresenter {
 
-  let viewController: LoginViewController
   let delegate: LoginViewControllerDelegate
   let validation = "validateKeyRegex".localized()
 
-  init(viewController: LoginViewController, delegate: LoginViewControllerDelegate) {
-    self.viewController = viewController
+  init(delegate: LoginViewControllerDelegate) {
     self.delegate = delegate
   }
 
-  func buttonPushed() {
+  func buttonPushed(with fieldValue: String) {
     delegate.startSpinnerAnimation()
-    if let key = viewController.keyField.text {
-      if key.matchPattern(validation) {
-        makeRequestWith(key: key)
-        return
-      }
+    if fieldValue.matchPattern(validation) {
+      makeRequestWith(key: fieldValue)
+      return
     }
     onFieldError()
   }
@@ -41,26 +37,20 @@ class LoginPresenter {
 
   private func onSuccessRequest(with list: AllSeasons) {
     delegate.stopSpinnerAnimation()
-    goToAllSeasonsView(list)
+    delegate.goToAllSeasonsView(list)
   }
 
   private func onFailRequest(with error: Error) {
     delegate.showErrorMessage()
     delegate.stopSpinnerAnimation()
-    viewController.keyField.cleanField()
+    delegate.cleanField()
     print("Unexpected resquest status code: \(error))")
   }
 
   private func onFieldError() {
     delegate.showErrorMessage()
     delegate.stopSpinnerAnimation()
-    viewController.keyField.cleanField()
-    viewController.loginButton.isEnabled = false
-  }
-
-  private func goToAllSeasonsView(_ list: AllSeasons) {
-    if let navigation = viewController.navigationController {
-      Router(navigation: navigation).goToAllSeasonsView(with: list)
-    }
+    delegate.cleanField()
+    //viewController.loginButton.isEnabled = false
   }
 }
