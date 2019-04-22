@@ -3,8 +3,8 @@ import UIKit
 
 class LoginPresenter {
 
-  var viewController: LoginViewController
-  var delegate: LoginViewControllerDelegate
+  let viewController: LoginViewController
+  let delegate: LoginViewControllerDelegate
   let validation = "validateKeyRegex".localized()
 
   init(viewController: LoginViewController, delegate: LoginViewControllerDelegate) {

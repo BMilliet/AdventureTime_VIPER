@@ -5,14 +5,15 @@ class AllSeasonsViewController: UIViewController {
   @IBOutlet weak var logoutButton: UIButton!
   @IBOutlet weak var tableView: UITableView!
 
-  var seasonsList: AllSeasons? = nil
+  var seasonsList: AllSeasons
 
   init(seasonsList: AllSeasons){
-    super.init(nibName: "AllSeasonsViewController", bundle:nil)
     self.seasonsList = seasonsList
+    super.init(nibName: "AllSeasonsViewController", bundle:nil)
   }
+
   required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
+    fatalError("")
   }
 
   override func viewDidLoad() {
