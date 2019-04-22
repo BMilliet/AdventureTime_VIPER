@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AllSeasonsViewController" customModule="AdventureTime" customModuleProvider="target">
             <connections>
+                <outlet property="logoutButton" destination="6q1-9C-eb8" id="Lfb-MV-qjo"/>
+                <outlet property="tableView" destination="j4B-Id-bKs" id="1aW-B6-NeZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,8 +21,59 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="0.0" green="1" blue="0.92761266750000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vLo-VM-CTC">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iih-iW-Rr7" userLabel="TopBar">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6q1-9C-eb8">
+                                    <rect key="frame" x="273" y="22" width="94" height="30"/>
+                                    <color key="backgroundColor" red="0.86287645729999995" green="0.097808176450000006" blue="0.26266452890000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="a3a-6v-xfd"/>
+                                        <constraint firstAttribute="width" constant="94" id="ju4-7m-cKU"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                    <state key="normal" title="Logout">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.73297846499999997" blue="0.6799201091" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="L6S-1d-dcf"/>
+                                <constraint firstAttribute="trailing" secondItem="6q1-9C-eb8" secondAttribute="trailing" constant="8" id="SKF-nK-TV5"/>
+                                <constraint firstItem="6q1-9C-eb8" firstAttribute="top" secondItem="iih-iW-Rr7" secondAttribute="top" constant="22" id="ZfF-eS-E7r"/>
+                                <constraint firstAttribute="bottom" secondItem="6q1-9C-eb8" secondAttribute="bottom" constant="8" id="qZ0-KH-Dje"/>
+                            </constraints>
+                        </view>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j4B-Id-bKs">
+                            <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </tableView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="j4B-Id-bKs" firstAttribute="leading" secondItem="vLo-VM-CTC" secondAttribute="leading" id="GKM-fA-7rp"/>
+                        <constraint firstItem="j4B-Id-bKs" firstAttribute="top" secondItem="iih-iW-Rr7" secondAttribute="bottom" id="GQm-wE-eWV"/>
+                        <constraint firstAttribute="trailing" secondItem="j4B-Id-bKs" secondAttribute="trailing" id="J5U-6c-q7J"/>
+                        <constraint firstItem="iih-iW-Rr7" firstAttribute="top" secondItem="vLo-VM-CTC" secondAttribute="top" id="VDD-RM-qge"/>
+                        <constraint firstAttribute="bottom" secondItem="j4B-Id-bKs" secondAttribute="bottom" id="dz2-oi-iiu"/>
+                        <constraint firstItem="iih-iW-Rr7" firstAttribute="leading" secondItem="vLo-VM-CTC" secondAttribute="leading" id="qlH-mi-STl"/>
+                        <constraint firstAttribute="trailing" secondItem="iih-iW-Rr7" secondAttribute="trailing" id="z9o-fX-6IY"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="0.1754978951" green="0.1754978951" blue="0.1754978951" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vLo-VM-CTC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="O6r-ri-cza"/>
+                <constraint firstItem="vLo-VM-CTC" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="VjO-iM-1Mh"/>
+                <constraint firstItem="vLo-VM-CTC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ysm-AZ-95N"/>
+                <constraint firstItem="vLo-VM-CTC" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="kJy-Tl-yFl"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138.40000000000001" y="152.47376311844079"/>
         </view>
     </objects>
 </document>

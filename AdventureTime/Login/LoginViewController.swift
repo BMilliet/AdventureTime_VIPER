@@ -1,16 +1,17 @@
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, LoginViewControllerDelegate {
 
   @IBOutlet weak var errorLabel: UILabel!
   @IBOutlet weak var keyField: UITextField!
   @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
   @IBOutlet weak var loginButton: UIButton!
 
-  private let presenter = LoginPresenter()
+  private var presenter: LoginPresenter?
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    presenter = LoginPresenter(viewController: self, delegate: self)
     setUpView()
   }
 
@@ -19,7 +20,7 @@ class LoginViewController: UIViewController {
   }
 
   @IBAction func loginButtonAction(_ sender: UIButton) {
-    startSpinnerAnimation()
+    presenter?.buttonPushed()
   }
 
   private func setUpView() {
@@ -30,12 +31,16 @@ class LoginViewController: UIViewController {
     keyField.addTarget(self, action: #selector(checkKeyField), for: .editingChanged)
   }
 
+  func showErrorMessage() {
+    errorLabel.isHidden = false
+  }
+
   func startSpinnerAnimation() {
     activitySpinner.isHidden = false
     activitySpinner.startAnimating()
   }
 
-  func stopSpinner() {
+  func stopSpinnerAnimation() {
     activitySpinner.isHidden = true
     activitySpinner.stopAnimating()
   }
