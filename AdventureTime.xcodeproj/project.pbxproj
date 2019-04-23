@@ -10,6 +10,8 @@
 		159027C1226C095C00B3D493 /* LoginViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159027C0226C095C00B3D493 /* LoginViewControllerDelegate.swift */; };
 		1593C320226D1FCF00A7CCCF /* DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1593C31F226D1FCF00A7CCCF /* DispatchQueue.swift */; };
 		15B4CBD8226EA0D400A0B3F3 /* NibManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B4CBD7226EA0D400A0B3F3 /* NibManager.swift */; };
+		15B4CBDC226EA39F00A0B3F3 /* SeasonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B4CBDA226EA39F00A0B3F3 /* SeasonViewCell.swift */; };
+		15B4CBDD226EA39F00A0B3F3 /* SeasonViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15B4CBDB226EA39F00A0B3F3 /* SeasonViewCell.xib */; };
 		15B76FF1226A6E0A0044F9C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B76FF0226A6E0A0044F9C6 /* AppDelegate.swift */; };
 		15B76FF8226A6E0B0044F9C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15B76FF7226A6E0B0044F9C6 /* Assets.xcassets */; };
 		15B76FFB226A6E0B0044F9C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15B76FF9226A6E0B0044F9C6 /* LaunchScreen.storyboard */; };
@@ -52,6 +54,8 @@
 		159027C0226C095C00B3D493 /* LoginViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerDelegate.swift; sourceTree = "<group>"; };
 		1593C31F226D1FCF00A7CCCF /* DispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueue.swift; sourceTree = "<group>"; };
 		15B4CBD7226EA0D400A0B3F3 /* NibManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibManager.swift; sourceTree = "<group>"; };
+		15B4CBDA226EA39F00A0B3F3 /* SeasonViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonViewCell.swift; sourceTree = "<group>"; };
+		15B4CBDB226EA39F00A0B3F3 /* SeasonViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeasonViewCell.xib; sourceTree = "<group>"; };
 		15B76FED226A6E0A0044F9C6 /* AdventureTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdventureTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15B76FF0226A6E0A0044F9C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15B76FF7226A6E0B0044F9C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,6 +108,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15B4CBD9226EA36100A0B3F3 /* SeasonCell */ = {
+			isa = PBXGroup;
+			children = (
+				15B4CBDA226EA39F00A0B3F3 /* SeasonViewCell.swift */,
+				15B4CBDB226EA39F00A0B3F3 /* SeasonViewCell.xib */,
+			);
+			path = SeasonCell;
+			sourceTree = "<group>";
+		};
 		15B76FE4226A6E0A0044F9C6 = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +197,7 @@
 		15B7702E226A84F90044F9C6 /* AllSeasons */ = {
 			isa = PBXGroup;
 			children = (
+				15B4CBD9226EA36100A0B3F3 /* SeasonCell */,
 				15B7702F226A85290044F9C6 /* AllSeasonsViewController.swift */,
 				15B77030226A85290044F9C6 /* AllSeasonsViewController.xib */,
 			);
@@ -327,6 +341,7 @@
 				15B77032226A85290044F9C6 /* AllSeasonsViewController.xib in Resources */,
 				15B76FF8226A6E0B0044F9C6 /* Assets.xcassets in Resources */,
 				15B77022226A6F970044F9C6 /* LoginViewController.xib in Resources */,
+				15B4CBDD226EA39F00A0B3F3 /* SeasonViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +369,7 @@
 				15B7703E226B55740044F9C6 /* AllSeasons.swift in Sources */,
 				15B77029226A7FCE0044F9C6 /* LoginPresenter.swift in Sources */,
 				15B77035226A86730044F9C6 /* UrlManager.swift in Sources */,
+				15B4CBDC226EA39F00A0B3F3 /* SeasonViewCell.swift in Sources */,
 				15B77021226A6F970044F9C6 /* LoginViewController.swift in Sources */,
 				15B77040226BA97B0044F9C6 /* Router.swift in Sources */,
 				1593C320226D1FCF00A7CCCF /* DispatchQueue.swift in Sources */,
