@@ -9,7 +9,7 @@ class AllSeasonsViewController: UIViewController {
 
   init(seasonsList: AllSeasons){
     self.seasonsList = seasonsList
-    super.init(nibName: "AllSeasonsViewController", bundle:nil)
+    super.init(nibName: NibManager.allSeasons.viewSelected(), bundle:nil)
   }
 
   required init?(coder aDecoder: NSCoder) {fatalError()}
