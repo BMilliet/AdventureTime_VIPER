@@ -21,6 +21,8 @@ class AllSeasonsViewController: UIViewController {
   }
 
   private func setUpView() {
+    tableView.delegate = self
+    tableView.dataSource = self
     logoutButton.layer.cornerRadius = 15
   }
 
@@ -37,11 +39,15 @@ extension AllSeasonsViewController: UITableViewDelegate, UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    return UITableViewCell()
+    let cell = tableView.dequeueReusableCell(withIdentifier: SeasonViewCell.identifier, for: indexPath) as! SeasonViewCell
+
+    let season = seasonsList.seasons[indexPath.row]
+    cell.populate(with: season)
+
+    return cell
   }
 
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return SeasonViewCell.cellHeight
   }
-
 }

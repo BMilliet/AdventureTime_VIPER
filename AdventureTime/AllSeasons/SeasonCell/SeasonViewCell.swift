@@ -15,10 +15,24 @@ class SeasonViewCell: UITableViewCell {
   }
 
   func populate(with season: Season) {
-    //seasonPoster.image = UIImage(data: logo)
+    getPoster(season.poster_path)
     seasonName.text = season.name
+    airDate.text = season.air_date
+    seasonOverview.text = season.overview
     seasonOverview.text = season.overview
     episodeCount.text = String(season.episode_count)
-    airDate.text = season.air_date
+  }
+
+  func getPoster(_ path: String) {
+    let posterData = UrlManager.posterData(with: path)
+    seasonPoster.image = UIImage(data: posterData)
+  }
+
+  override func prepareForReuse() {
+    seasonPoster.image = nil
+    airDate.text?.removeAll()
+    seasonName.text?.removeAll()
+    episodeCount.text?.removeAll()
+    seasonOverview.text?.removeAll()
   }
 }
