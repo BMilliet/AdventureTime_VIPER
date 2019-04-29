@@ -1,14 +1,14 @@
 import UIKit
 
-class SeasonViewCell: UITableViewCell {
+class SeasonViewCell: UICollectionViewCell {
 
-  @IBOutlet weak var seasonPoster: UIImageView!
   @IBOutlet weak var seasonName: UILabel!
-  @IBOutlet weak var seasonOverview: UITextView!
+  @IBOutlet weak var seasonPoster: UIImageView!
   @IBOutlet weak var episodeCount: UILabel!
   @IBOutlet weak var airDate: UILabel!
 
-  static let cellHeight: CGFloat = 194
+  static let currentHeight = CGFloat(250)
+  static let currentWidth = CGFloat(150)
 
   static var identifier: String {
     return String(describing: SeasonViewCell.self)
@@ -18,8 +18,6 @@ class SeasonViewCell: UITableViewCell {
     getPoster(season.poster_path)
     seasonName.text = season.name
     airDate.text = season.air_date
-    seasonOverview.text = season.overview
-    seasonOverview.text = season.overview
     episodeCount.text = String(season.episode_count)
   }
 
@@ -33,6 +31,5 @@ class SeasonViewCell: UITableViewCell {
     airDate.text?.removeAll()
     seasonName.text?.removeAll()
     episodeCount.text?.removeAll()
-    seasonOverview.text?.removeAll()
   }
 }
