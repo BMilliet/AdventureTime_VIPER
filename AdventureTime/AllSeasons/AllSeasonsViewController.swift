@@ -33,6 +33,7 @@ class AllSeasonsViewController: UIViewController {
 }
 
 extension AllSeasonsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return seasonsList.total()
   }
@@ -49,6 +50,12 @@ extension AllSeasonsViewController: UICollectionViewDelegate, UICollectionViewDa
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     return CGSize(width: SeasonViewCell.currentWidth, height: SeasonViewCell.currentHeight)
   }
+
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    return UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
+  }
+
+
 
 //  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //    let movieId = movieList?.items[indexPath.row].id
