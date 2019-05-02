@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SeasonViewCell" customModule="AdventureTime" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="180" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="180" height="300"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VSa-Jc-2QX">
+                        <rect key="frame" x="5" y="29.5" width="170" height="254"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Season 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oa-3e-jeK">
+                        <rect key="frame" x="5" y="0.0" width="170" height="25"/>
+                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="PKV-6B-KMM">
+                        <rect key="frame" x="8" y="283.5" width="164" height="16.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5be-JX-I7W">
+                                <rect key="frame" x="0.0" y="0.0" width="81" height="16.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05/04/2010" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZw-GB-QHg">
+                                <rect key="frame" x="83" y="0.0" width="81" height="16.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="9"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="VSa-Jc-2QX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="6hl-hS-GTh"/>
+                <constraint firstItem="0oa-3e-jeK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="OR5-VR-wmo"/>
+                <constraint firstItem="PKV-6B-KMM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="WbM-EG-49m"/>
+                <constraint firstAttribute="bottom" secondItem="PKV-6B-KMM" secondAttribute="bottom" id="Yin-JS-PMO"/>
+                <constraint firstItem="0oa-3e-jeK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="c5i-XE-m9c"/>
+                <constraint firstItem="VSa-Jc-2QX" firstAttribute="top" secondItem="0oa-3e-jeK" secondAttribute="bottom" constant="4.5" id="i6N-Ph-oCm"/>
+                <constraint firstItem="PKV-6B-KMM" firstAttribute="top" secondItem="VSa-Jc-2QX" secondAttribute="bottom" id="srF-24-4uz"/>
+                <constraint firstAttribute="trailing" secondItem="PKV-6B-KMM" secondAttribute="trailing" constant="8" id="wfe-SG-sjk"/>
+                <constraint firstAttribute="trailing" secondItem="VSa-Jc-2QX" secondAttribute="trailing" constant="5" id="xkO-wt-HUI"/>
+                <constraint firstAttribute="trailing" secondItem="0oa-3e-jeK" secondAttribute="trailing" constant="5" id="zdH-hs-teD"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="195" height="317"/>
+            <connections>
+                <outlet property="airDate" destination="MZw-GB-QHg" id="JZv-NM-sid"/>
+                <outlet property="episodeCount" destination="5be-JX-I7W" id="nIx-IL-ctK"/>
+                <outlet property="seasonName" destination="0oa-3e-jeK" id="10E-jX-unl"/>
+                <outlet property="seasonPoster" destination="VSa-Jc-2QX" id="dFM-UH-so1"/>
+            </connections>
+            <point key="canvasLocation" x="252.80000000000001" y="273.4632683658171"/>
+        </collectionViewCell>
+    </objects>
+</document>

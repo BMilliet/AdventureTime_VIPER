@@ -1,9 +1,9 @@
 struct Season: Decodable {
-  let air_date: String
-  let episode_count: Int
   let id: Int
   let name: String
+  let air_date: String
   let overview: String?
-  let poster_path: String
+  let episode_count: Int
   let season_number: Int
+  let poster_path: String
 }

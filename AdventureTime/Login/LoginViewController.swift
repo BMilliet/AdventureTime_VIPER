@@ -11,7 +11,7 @@ class LoginViewController: UIViewController, LoginViewControllerDelegate {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    presenter = LoginPresenter(viewController: self, delegate: self)
+    presenter = LoginPresenter(delegate: self)
     setUpView()
   }
 
@@ -20,7 +20,7 @@ class LoginViewController: UIViewController, LoginViewControllerDelegate {
   }
 
   @IBAction func loginButtonAction(_ sender: UIButton) {
-    presenter?.buttonPushed()
+    presenter?.buttonPushed(with: keyField.text!)
   }
 
   private func setUpView() {
@@ -28,6 +28,7 @@ class LoginViewController: UIViewController, LoginViewControllerDelegate {
     activitySpinner.isHidden = true
     loginButton.isEnabled = false
     loginButton.layer.cornerRadius = 25
+    errorLabel.text = "loginError".localized()
     keyField.addTarget(self, action: #selector(checkKeyField), for: .editingChanged)
   }
 
@@ -43,5 +44,17 @@ class LoginViewController: UIViewController, LoginViewControllerDelegate {
   func stopSpinnerAnimation() {
     activitySpinner.isHidden = true
     activitySpinner.stopAnimating()
+  }
+
+  func cleanField() {
+    keyField.cleanField()
+  }
+
+  func disableButton() {
+    loginButton.isEnabled = false
+  }
+
+  func goToAllSeasonsView(_ list: AllSeasons) {
+    Router(navigation: navigationController).goToAllSeasonsView(with: list)
   }
 }

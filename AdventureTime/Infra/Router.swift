@@ -1,15 +1,15 @@
 import UIKit
 
-class Router {
+class Router: Assembler{
 
-  let navigation: UINavigationController
+  let navigation: UINavigationController?
 
-  init(navigation: UINavigationController) {
+  init(navigation: UINavigationController?) {
     self.navigation = navigation
   }
 
   func goToAllSeasonsView(with list: AllSeasons) {
-    let allSeasons = AllSeasonsViewController(seasonsList: list)
-    navigation.pushViewController(allSeasons, animated: true)
+    let allSeasons = resolve(list)
+    navigation?.pushViewController(allSeasons, animated: true)
   }
 }

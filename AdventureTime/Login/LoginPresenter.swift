@@ -3,30 +3,20 @@ import UIKit
 
 class LoginPresenter {
 
-  var viewController: LoginViewController
-  var delegate: LoginViewControllerDelegate
+  let delegate: LoginViewControllerDelegate
+  let validation = "validateKeyRegex".localized()
 
-  init(viewController: LoginViewController, delegate: LoginViewControllerDelegate) {
-    self.viewController = viewController
+  init(delegate: LoginViewControllerDelegate) {
     self.delegate = delegate
   }
 
-  func buttonPushed() {
+  func buttonPushed(with fieldValue: String) {
     delegate.startSpinnerAnimation()
-    if let key = viewController.keyField.text {
-      if isValidFormat(key) {
-        makeRequestWith(key: viewController.keyField.text!)
-        return
-      }
+    if fieldValue.matchPattern(validation) {
+      makeRequestWith(key: fieldValue)
+      return
     }
-    delegate.stopSpinnerAnimation()
-    viewController.keyField.cleanField()
-    viewController.loginButton.isEnabled = false
-  }
-
-  private func isValidFormat(_ string: String) -> Bool {
-    let pattern = "^[a-zA-Z0-9]*$"
-    return NSPredicate(format: "SELF MATCHES %@", pattern).evaluate(with: string)
+    onFieldError()
   }
 
   private func makeRequestWith(key: String) {
@@ -47,18 +37,21 @@ class LoginPresenter {
 
   private func onSuccessRequest(with list: AllSeasons) {
     delegate.stopSpinnerAnimation()
-    goToAllSeasonsView(list)
+    delegate.goToAllSeasonsView(list)
   }
 
   private func onFailRequest(with error: Error) {
     delegate.showErrorMessage()
     delegate.stopSpinnerAnimation()
+    delegate.cleanField()
+    delegate.disableButton()
     print("Unexpected resquest status code: \(error))")
   }
 
-  private func goToAllSeasonsView(_ list: AllSeasons) {
-    if let navigation = viewController.navigationController {
-      Router(navigation: navigation).goToAllSeasonsView(with: list)
-    }
+  private func onFieldError() {
+    delegate.showErrorMessage()
+    delegate.stopSpinnerAnimation()
+    delegate.cleanField()
+    delegate.disableButton()
   }
 }

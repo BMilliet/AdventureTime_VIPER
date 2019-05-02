@@ -1,0 +1,2 @@
+"validateKeyRegex" = "^[a-zA-Z0-9]*$";
+"loginError" = "Ops.. invalid key";
