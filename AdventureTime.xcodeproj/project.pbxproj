@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		150CA5E2227B2DD700F51A6D /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150CA5E1227B2DD700F51A6D /* Assembler.swift */; };
 		159027C1226C095C00B3D493 /* LoginViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159027C0226C095C00B3D493 /* LoginViewControllerDelegate.swift */; };
 		1593C320226D1FCF00A7CCCF /* DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1593C31F226D1FCF00A7CCCF /* DispatchQueue.swift */; };
 		15A513532276690100C889DA /* SeasonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A513512276690100C889DA /* SeasonViewCell.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		150CA5E1227B2DD700F51A6D /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
 		159027C0226C095C00B3D493 /* LoginViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerDelegate.swift; sourceTree = "<group>"; };
 		1593C31F226D1FCF00A7CCCF /* DispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueue.swift; sourceTree = "<group>"; };
 		15A513512276690100C889DA /* SeasonViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonViewCell.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				15B77036226A9F2E0044F9C6 /* API.swift */,
 				15B7703F226BA97B0044F9C6 /* Router.swift */,
 				15B4CBD7226EA0D400A0B3F3 /* NibManager.swift */,
+				150CA5E1227B2DD700F51A6D /* Assembler.swift */,
 			);
 			path = Infra;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				15B7703C226B54A20044F9C6 /* Season.swift in Sources */,
 				159027C1226C095C00B3D493 /* LoginViewControllerDelegate.swift in Sources */,
 				15B4CBD8226EA0D400A0B3F3 /* NibManager.swift in Sources */,
+				150CA5E2227B2DD700F51A6D /* Assembler.swift in Sources */,
 				15B76FF1226A6E0A0044F9C6 /* AppDelegate.swift in Sources */,
 				15B77025226A733F0044F9C6 /* UIViewController.swift in Sources */,
 				15B77037226A9F2E0044F9C6 /* API.swift in Sources */,

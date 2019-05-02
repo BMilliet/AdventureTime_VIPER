@@ -1,6 +1,6 @@
 import UIKit
 
-class Router {
+class Router: Assembler{
 
   let navigation: UINavigationController?
 
@@ -9,7 +9,7 @@ class Router {
   }
 
   func goToAllSeasonsView(with list: AllSeasons) {
-    let allSeasons = AllSeasonsViewController(seasonsList: list)
+    let allSeasons = resolve(list)
     navigation?.pushViewController(allSeasons, animated: true)
   }
 }
