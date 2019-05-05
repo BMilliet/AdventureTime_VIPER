@@ -13,7 +13,6 @@ class AllSeasonsPresenter: Presentable {
       case .success(let object):
         DispatchQueue.executeFromMainThread {
           self.onSuccessRequest(with: object)
-          self.delegate?.goToAllEpisodes(object)
         }
       case .failure(let error):
         DispatchQueue.executeFromMainThread {
@@ -24,12 +23,12 @@ class AllSeasonsPresenter: Presentable {
   }
 
   func onFailRequest(with error: Error) {
-    //do something
+    print(error)
   }
 
   func onSuccessRequest(with object: Decodable) {
     if let list = object as? AllEpisodes {
-      // do something
+      delegate?.goToAllEpisodes(list)
     }
   }
 }
