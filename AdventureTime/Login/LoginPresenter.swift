@@ -26,6 +26,7 @@ class LoginPresenter {
       case .success(let object):
         DispatchQueue.executeFromMainThread {
           self.onSuccessRequest(with: object)
+          User.shared.userKey = key
         }
       case .failure(let error):
         DispatchQueue.executeFromMainThread {

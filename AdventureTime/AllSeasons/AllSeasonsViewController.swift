@@ -55,11 +55,19 @@ extension AllSeasonsViewController: UICollectionViewDelegate, UICollectionViewDa
     return UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
   }
 
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let season = seasonsList.seasons[indexPath.row].season_number
+
+    let url = UrlManager.season(number: season, userKey: User.shared.userKey!)
 
 
-//  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//    let movieId = movieList?.items[indexPath.row].id
-//    let url = UrlManager().movieDetails(id: movieId!, userKey: dao.userKey)
-//    API.makeRequest(url: url!, onSuccess: setMovie)
-//  }
+    API().makeRequest(url: url!, objectType: AllEpisodes.self) { (result: API.RequestResult) in
+      switch result {
+      case .success(let object):
+        print(object)
+      case .failure(let error):
+        print(error)
+      }
+    }
+  }
 }

@@ -38,6 +38,7 @@
 		15B7703E226B55740044F9C6 /* AllSeasons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B7703D226B55740044F9C6 /* AllSeasons.swift */; };
 		15B77040226BA97B0044F9C6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B7703F226BA97B0044F9C6 /* Router.swift */; };
 		15CCC0A6227E21F30036D6C5 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CCC0A5227E21F30036D6C5 /* URL.swift */; };
+		15DBC822227E6AB700421863 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DBC821227E6AB700421863 /* User.swift */; };
 		15E99ED6226DEAD0004C7882 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 15E99ED5226DEAD0004C7882 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,7 @@
 		15B7703D226B55740044F9C6 /* AllSeasons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSeasons.swift; sourceTree = "<group>"; };
 		15B7703F226BA97B0044F9C6 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		15CCC0A5227E21F30036D6C5 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		15DBC821227E6AB700421863 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		15E99ED5226DEAD0004C7882 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -260,6 +262,7 @@
 				15B7703D226B55740044F9C6 /* AllSeasons.swift */,
 				15170102227DC14100A27025 /* Episode.swift */,
 				15170104227DC9E900A27025 /* AllEpisodes.swift */,
+				15DBC821227E6AB700421863 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				15B77025226A733F0044F9C6 /* UIViewController.swift in Sources */,
 				15B77037226A9F2E0044F9C6 /* API.swift in Sources */,
 				15B7702D226A80490044F9C6 /* UITextField.swift in Sources */,
+				15DBC822227E6AB700421863 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
