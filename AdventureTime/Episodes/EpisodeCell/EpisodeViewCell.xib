@@ -13,42 +13,85 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="160" id="KGk-i7-Jjw" customClass="EpisodeViewCell" customModule="AdventureTime" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+            <rect key="frame" x="0.0" y="0.0" width="330" height="160"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="330" height="159.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lmW-jh-7Nx">
-                        <rect key="frame" x="16" y="11" width="147" height="138"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lmW-jh-7Nx">
+                        <rect key="frame" x="16" y="48" width="143" height="101"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="143" id="FY9-nt-sXO"/>
+                            <constraint firstAttribute="height" constant="101" id="OE5-96-38U"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Slumber Party Panic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrn-tD-Rst">
-                        <rect key="frame" x="171" y="15" width="188" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slumber Party Panic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrn-tD-Rst">
+                        <rect key="frame" x="44" y="14" width="210" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="210" id="ABe-LN-9QG"/>
+                            <constraint firstAttribute="height" constant="21" id="cfo-Hj-K1P"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rnf-cD-Tkr">
-                        <rect key="frame" x="171" y="44" width="188" height="105"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnf-cD-Tkr">
+                        <rect key="frame" x="167" y="43" width="150" height="106"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="106" id="EL0-ts-Hhr"/>
+                        </constraints>
                         <string key="text">Finn and Princess Bubblegum must protect the Candy Kingdom from a horde of candy zombies they accidentally created.
 
 </string>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="12"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFG-0m-vaN">
+                        <rect key="frame" x="16" y="15" width="20" height="19"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="19" id="WJb-ej-fs0"/>
+                            <constraint firstAttribute="width" constant="20" id="lHA-gi-cdg"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MC9-1l-3iX">
+                        <rect key="frame" x="262" y="11" width="40" height="29"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.0016884094269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="kYe-vH-LmP"/>
+                            <constraint firstAttribute="height" constant="29" id="ztJ-hq-ihc"/>
+                        </constraints>
+                    </view>
                 </subviews>
+                <color key="backgroundColor" red="0.23518458549999999" green="0.23518458549999999" blue="0.23518458549999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="MC9-1l-3iX" secondAttribute="trailing" constant="12" id="Cxd-Xb-mQQ"/>
+                    <constraint firstItem="MC9-1l-3iX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="GM6-A8-xkD"/>
+                    <constraint firstItem="lmW-jh-7Nx" firstAttribute="top" secondItem="vrn-tD-Rst" secondAttribute="bottom" constant="13" id="ILn-Yt-BaM"/>
+                    <constraint firstItem="lmW-jh-7Nx" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="a1B-ek-fCU"/>
+                    <constraint firstItem="DFG-0m-vaN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="eRa-NJ-yun"/>
+                    <constraint firstItem="vrn-tD-Rst" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="eV8-a8-HEu"/>
+                    <constraint firstItem="DFG-0m-vaN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="ile-uh-Pzn"/>
+                    <constraint firstItem="rnf-cD-Tkr" firstAttribute="leading" secondItem="lmW-jh-7Nx" secondAttribute="trailing" constant="8" id="r9a-jN-Yfa"/>
+                    <constraint firstItem="vrn-tD-Rst" firstAttribute="leading" secondItem="DFG-0m-vaN" secondAttribute="trailing" constant="8" id="wZ3-gQ-Q8B"/>
+                    <constraint firstItem="lmW-jh-7Nx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="xgB-sc-NuS"/>
+                    <constraint firstAttribute="bottom" secondItem="rnf-cD-Tkr" secondAttribute="bottom" constant="10.5" id="xzH-fQ-xe5"/>
+                    <constraint firstAttribute="trailing" secondItem="rnf-cD-Tkr" secondAttribute="trailing" constant="13" id="y65-RV-CIE"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="episodeImage" destination="lmW-jh-7Nx" id="CVJ-xG-1OD"/>
+                <outlet property="episodeNumber" destination="DFG-0m-vaN" id="Dvp-rT-eC1"/>
                 <outlet property="episodeOverview" destination="rnf-cD-Tkr" id="U03-bj-34h"/>
                 <outlet property="episodeTitle" destination="vrn-tD-Rst" id="iEn-70-ajQ"/>
             </connections>
-            <point key="canvasLocation" x="-79.200000000000003" y="61.169415292353825"/>
+            <point key="canvasLocation" x="-115.2" y="61.169415292353825"/>
         </tableViewCell>
     </objects>
 </document>

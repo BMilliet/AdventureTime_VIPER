@@ -4,6 +4,7 @@ class EpisodesViewController: UIViewController {
   
   @IBOutlet weak var searchBar: UISearchBar!
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var backButton: UIButton!
 
   var episodesList: AllEpisodes
 
@@ -17,11 +18,22 @@ class EpisodesViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     registerCell()
+    setUpView()
+  }
+
+  @IBAction func goBack(_ sender: UIButton) {
+    navigationController?.popViewController(animated: true)
   }
 
   private func registerCell() {
     let cell = UINib(nibName: EpisodeViewCell.identifier, bundle: nil)
     tableView.register(cell, forCellReuseIdentifier: EpisodeViewCell.identifier)
+  }
+
+  private func setUpView() {
+    tableView.delegate = self
+    tableView.dataSource = self
+    backButton.layer.cornerRadius = 15
   }
 }
 
@@ -37,5 +49,9 @@ extension EpisodesViewController: UITableViewDelegate, UITableViewDataSource {
 
     cell.populate(with: episode)
     return cell
+  }
+
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return EpisodeViewCell.currentHeight
   }
 }

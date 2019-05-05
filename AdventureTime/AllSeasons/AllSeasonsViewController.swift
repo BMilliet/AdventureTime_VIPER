@@ -1,14 +1,16 @@
 import UIKit
 
-class AllSeasonsViewController: UIViewController {
+class AllSeasonsViewController: UIViewController, AllSeasonsViewControllerDelegate {
 
   @IBOutlet weak var logoutButton: UIButton!
   @IBOutlet weak var collectionView: UICollectionView!
 
   var seasonsList: AllSeasons
+  var presenter: AllSeasonsPresenter
 
-  init(seasonsList: AllSeasons){
+  init(seasonsList: AllSeasons, presenter: AllSeasonsPresenter){
     self.seasonsList = seasonsList
+    self.presenter = presenter
     super.init(nibName: NibManager.allSeasons.viewSelected(), bundle:nil)
   }
 
@@ -16,8 +18,13 @@ class AllSeasonsViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    presenter.delegate = self
     registerCell()
     setUpView()
+  }
+
+  func goToAllEpisodes(_ list: AllEpisodes) {
+    Router(navigation: navigationController).goToAllEpisodesView(with: list)
   }
 
   private func setUpView() {
@@ -57,17 +64,6 @@ extension AllSeasonsViewController: UICollectionViewDelegate, UICollectionViewDa
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let season = seasonsList.seasons[indexPath.row].season_number
-
-    let url = UrlManager.season(number: season, userKey: User.shared.userKey!)
-
-
-    API().makeRequest(url: url!, objectType: AllEpisodes.self) { (result: API.RequestResult) in
-      switch result {
-      case .success(let object):
-        print(object)
-      case .failure(let error):
-        print(error)
-      }
-    }
+    presenter.makeRequestWith(number: season)
   }
 }

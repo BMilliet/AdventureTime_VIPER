@@ -1,0 +1,35 @@
+import Foundation
+import UIKit
+
+class AllSeasonsPresenter: Presentable {
+
+  var delegate: AllSeasonsViewControllerDelegate?
+
+  func makeRequestWith(number: Int) {
+    let key = User.shared.userKey!
+    let url = UrlManager.season(number: number, userKey: key)
+    API().makeRequest(url: url!, objectType: AllEpisodes.self) { (result: API.RequestResult) in
+      switch result {
+      case .success(let object):
+        DispatchQueue.executeFromMainThread {
+          self.onSuccessRequest(with: object)
+          self.delegate?.goToAllEpisodes(object)
+        }
+      case .failure(let error):
+        DispatchQueue.executeFromMainThread {
+          self.onFailRequest(with: error)
+        }
+      }
+    }
+  }
+
+  func onFailRequest(with error: Error) {
+    //do something
+  }
+
+  func onSuccessRequest(with object: Decodable) {
+    if let list = object as? AllEpisodes {
+      // do something
+    }
+  }
+}

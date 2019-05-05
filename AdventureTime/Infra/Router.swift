@@ -12,4 +12,9 @@ class Router: Assembler{
     let allSeasons = resolve(list)
     navigation?.pushViewController(allSeasons, animated: true)
   }
+
+  func goToAllEpisodesView(with list: AllEpisodes) {
+    let allEpisodes = resolve(list)
+    navigation?.pushViewController(allEpisodes, animated: true)
+  }
 }
