@@ -22,7 +22,7 @@ class SeasonViewCell: UICollectionViewCell {
   }
 
   func getPoster(_ path: String) {
-    let posterData = UrlManager.posterData(with: path)
+    let posterData = UrlManager.getPosterData(with: path)
     seasonPoster.image = UIImage(data: posterData)
   }
 

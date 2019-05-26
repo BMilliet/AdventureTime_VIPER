@@ -22,7 +22,7 @@ struct UrlManager {
     return buildParams(base, userKey)
   }
 
-  static func posterData(with path: String) -> Data {
+  static func getPosterData(with path: String) -> Data {
     let path = buildPath([APIPosterUrl,path])
     let posterPath = URL(string: path)
     let data = try! Data(contentsOf: posterPath!)
