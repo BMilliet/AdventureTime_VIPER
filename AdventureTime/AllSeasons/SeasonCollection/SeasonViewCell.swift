@@ -9,21 +9,17 @@ class SeasonViewCell: UICollectionViewCell {
 
   static let currentHeight = CGFloat(250)
   static let currentWidth = CGFloat(150)
+  let customImage = CustomUIImage()
 
   static var identifier: String {
     return String(describing: SeasonViewCell.self)
   }
 
   func populate(with season: Season) {
-    getPoster(season.poster_path)
     seasonName.text = season.name
     airDate.text = season.air_date
     episodeCount.text = String(season.episode_count)
-  }
-
-  func getPoster(_ path: String) {
-    let posterData = UrlManager.getPosterData(with: path)
-    seasonPoster.image = UIImage(data: posterData)
+    getPosterImage(for: season)
   }
 
   override func prepareForReuse() {
@@ -31,5 +27,11 @@ class SeasonViewCell: UICollectionViewCell {
     airDate.text?.removeAll()
     seasonName.text?.removeAll()
     episodeCount.text?.removeAll()
+  }
+
+  private func getPosterImage(for season: Season) {
+    customImage.loadAsync(with: season.poster_path,
+                          imagePlace: seasonPoster,
+                          placeHolder: #imageLiteral(resourceName: "placeholder-img"))
   }
 }

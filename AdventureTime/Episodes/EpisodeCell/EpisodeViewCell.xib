@@ -90,6 +90,7 @@
                 <outlet property="episodeNumber" destination="DFG-0m-vaN" id="Dvp-rT-eC1"/>
                 <outlet property="episodeOverview" destination="rnf-cD-Tkr" id="U03-bj-34h"/>
                 <outlet property="episodeTitle" destination="vrn-tD-Rst" id="iEn-70-ajQ"/>
+                <outlet property="watchIcon" destination="MC9-1l-3iX" id="ztf-8H-oxA"/>
             </connections>
             <point key="canvasLocation" x="-115.2" y="61.169415292353825"/>
         </tableViewCell>
