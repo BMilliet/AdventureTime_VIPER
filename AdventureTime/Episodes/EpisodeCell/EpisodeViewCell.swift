@@ -8,14 +8,14 @@ class EpisodeViewCell: UITableViewCell {
   @IBOutlet weak var episodeImage: UIImageView!
 
   static let currentHeight = CGFloat(160)
-  let imageCache = NSCache<NSString, UIImage>()
+  let customImage = CustomUIImage()
 
   static var identifier: String {
     return String(describing: EpisodeViewCell.self)
   }
 
   func populate(with episode: Episode) {
-    getPoster(episode.still_path)
+    customImage.loadAsync(with: episode.still_path, imagePlace: episodeImage, placeHolder: #imageLiteral(resourceName: "placeholder-img"))
     episodeTitle.text = episode.name
     episodeOverview.text = episode.overview
     episodeNumber.text = String(episode.episode_number)
@@ -26,19 +26,5 @@ class EpisodeViewCell: UITableViewCell {
     episodeTitle.text?.removeAll()
     episodeNumber.text?.removeAll()
     episodeOverview.text?.removeAll()
-  }
-
-  func getPoster(_ path: String) {
-    if let imageFromCache = imageCache.object(forKey: path as NSString) {
-      episodeImage.image = imageFromCache
-      return
-    }
-
-    DispatchQueue.main.async {
-      let posterData = UrlManager.getPosterData(with: path)
-      let image = UIImage(data: posterData)
-      self.imageCache.setObject(image!, forKey: path as NSString)
-      self.episodeImage.image = image
-    }
   }
 }
