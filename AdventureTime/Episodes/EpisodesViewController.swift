@@ -8,6 +8,7 @@ class EpisodesViewController: UIViewController {
 
   var episodesList: AllEpisodes
 
+  
   init(episodesList: AllEpisodes){
     self.episodesList = episodesList
     super.init(nibName: NibManager.seasonEpisodes.viewSelected(), bundle:nil)
@@ -37,6 +38,7 @@ class EpisodesViewController: UIViewController {
   }
 }
 
+
 extension EpisodesViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return episodesList.total()
@@ -46,8 +48,7 @@ extension EpisodesViewController: UITableViewDelegate, UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: EpisodeViewCell.identifier, for: indexPath) as! EpisodeViewCell
 
     let episode = episodesList.episodes[indexPath.row]
-    cell.populate(with: episode)
-    cell.enableIconAction()
+    cell.initializeCell(with: episode)
     
     return cell
   }

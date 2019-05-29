@@ -4,14 +4,14 @@ class User {
   static let shared = User()
 
   func watchedEpisode(id: Int) {
-    if checkEpisode(id: id) {
+    if allReadyWatchedEpisode(id: id) {
       watchedEpisodes.delete(id)
     } else {
       watchedEpisodes.append(id)
     }
   }
 
-  private func checkEpisode(id: Int) -> Bool {
+  func allReadyWatchedEpisode(id: Int) -> Bool {
     return watchedEpisodes.contains(id)
   }
 }
