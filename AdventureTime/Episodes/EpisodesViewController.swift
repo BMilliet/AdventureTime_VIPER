@@ -46,8 +46,9 @@ extension EpisodesViewController: UITableViewDelegate, UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: EpisodeViewCell.identifier, for: indexPath) as! EpisodeViewCell
 
     let episode = episodesList.episodes[indexPath.row]
-
     cell.populate(with: episode)
+    cell.enableIconAction()
+    
     return cell
   }
 

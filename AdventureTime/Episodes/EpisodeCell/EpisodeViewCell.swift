@@ -11,6 +11,7 @@ class EpisodeViewCell: UITableViewCell {
 
   static let currentHeight = CGFloat(160)
   let customImage = CustomUIImage()
+  var episodeId: Int?
 
   static var identifier: String {
     return String(describing: EpisodeViewCell.self)
@@ -21,6 +22,12 @@ class EpisodeViewCell: UITableViewCell {
     episodeOverview.text = episode.overview
     episodeNumber.text = String(episode.episode_number)
     getPosterImage(for: episode)
+    episodeId = episode.id
+  }
+
+  func enableIconAction() {
+    let gesture = UITapGestureRecognizer(target: self, action: #selector(tapOnWatched))
+    watchIcon.addGestureRecognizer(gesture)
   }
 
   override func prepareForReuse() {
@@ -34,5 +41,11 @@ class EpisodeViewCell: UITableViewCell {
     customImage.loadAsync(with: episode.still_path,
                           imagePlace: episodeImage,
                           placeHolder: #imageLiteral(resourceName: "placeholder-img"))
+  }
+
+  @objc private func tapOnWatched() {
+    if let id = episodeId {
+      User.shared.watchedEpisode(id: id)
+    }
   }
 }

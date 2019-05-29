@@ -5,13 +5,13 @@ class User {
 
   func watchedEpisode(id: Int) {
     if checkEpisode(id: id) {
-      watchedEpisodes.remove(at: id)
+      watchedEpisodes.delete(id)
     } else {
       watchedEpisodes.append(id)
     }
   }
 
-  func checkEpisode(id: Int) -> Bool {
+  private func checkEpisode(id: Int) -> Bool {
     return watchedEpisodes.contains(id)
   }
 }
