@@ -8,13 +8,16 @@ class AllSeasonsViewController: UIViewController, AllSeasonsViewControllerDelega
   var seasonsList: AllSeasons
   var presenter: AllSeasonsPresenter
 
+  
   init(seasonsList: AllSeasons, presenter: AllSeasonsPresenter){
     self.seasonsList = seasonsList
     self.presenter = presenter
     super.init(nibName: NibManager.allSeasons.viewSelected(), bundle:nil)
   }
 
-  required init?(coder aDecoder: NSCoder) {fatalError()}
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("allSeasonsViewControllerError".localized())
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -38,6 +41,7 @@ class AllSeasonsViewController: UIViewController, AllSeasonsViewControllerDelega
     collectionView.register(cell, forCellWithReuseIdentifier: SeasonViewCell.identifier)
   }
 }
+
 
 extension AllSeasonsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 

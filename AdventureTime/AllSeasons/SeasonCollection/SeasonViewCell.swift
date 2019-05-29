@@ -11,6 +11,7 @@ class SeasonViewCell: UICollectionViewCell {
   static let currentWidth = CGFloat(150)
   let customImage = CustomUIImage()
 
+  
   static var identifier: String {
     return String(describing: SeasonViewCell.self)
   }

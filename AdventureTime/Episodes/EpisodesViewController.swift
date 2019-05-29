@@ -14,7 +14,9 @@ class EpisodesViewController: UIViewController {
     super.init(nibName: NibManager.seasonEpisodes.viewSelected(), bundle:nil)
   }
 
-  required init?(coder aDecoder: NSCoder) {fatalError()}
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("episodesViewControllerError".localized())
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()

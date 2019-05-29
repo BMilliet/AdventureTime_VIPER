@@ -1,2 +1,7 @@
+// login
 "validateKeyRegex" = "^[a-zA-Z0-9]*$";
 "loginError" = "Ops.. invalid key";
+
+// required inits fatal
+"allSeasonsViewControllerError" = "AllSeasonsViewController required init fatal";
+"episodesViewControllerError" = "EpisodesViewController required init fatal";

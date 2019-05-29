@@ -1,6 +1,6 @@
 import UIKit
 
-class Router: Assembler{
+class Router: Assembler {
 
   let navigation: UINavigationController?
 

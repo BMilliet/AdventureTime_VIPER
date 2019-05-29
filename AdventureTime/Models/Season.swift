@@ -6,4 +6,5 @@ struct Season: Decodable {
   let episode_count: Int
   let season_number: Int
   let poster_path: String
+  var watchedEpisodeCount = 0
 }
