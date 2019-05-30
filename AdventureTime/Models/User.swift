@@ -1,4 +1,5 @@
 class User {
+  
   var userKey: String?
   var watchedEpisodes = [Int]()
   static let shared = User()
@@ -15,3 +16,5 @@ class User {
     return watchedEpisodes.contains(id)
   }
 }
+
+

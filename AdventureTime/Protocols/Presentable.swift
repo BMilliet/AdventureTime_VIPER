@@ -5,7 +5,5 @@ protocol Presentable {
 }
 
 extension Presentable {
-  func makeRequestWith(_ number: Int = 0) {
-
-  }
+  func makeRequestWith(_ number: Int = 0) {}
 }

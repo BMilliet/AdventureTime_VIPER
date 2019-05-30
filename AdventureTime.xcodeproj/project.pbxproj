@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15089702229F4BCA00F4335F /* EpisodeCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15089701229F4BCA00F4335F /* EpisodeCounter.swift */; };
 		150CA5E2227B2DD700F51A6D /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150CA5E1227B2DD700F51A6D /* Assembler.swift */; };
 		151700FB227DBFDB00A27025 /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151700F9227DBFDB00A27025 /* EpisodesViewController.swift */; };
 		151700FC227DBFDB00A27025 /* EpisodesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 151700FA227DBFDB00A27025 /* EpisodesViewController.xib */; };
@@ -65,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15089701229F4BCA00F4335F /* EpisodeCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCounter.swift; sourceTree = "<group>"; };
 		150CA5E1227B2DD700F51A6D /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
 		151700F9227DBFDB00A27025 /* EpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewController.swift; sourceTree = "<group>"; };
 		151700FA227DBFDB00A27025 /* EpisodesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodesViewController.xib; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				15170102227DC14100A27025 /* Episode.swift */,
 				15170104227DC9E900A27025 /* AllEpisodes.swift */,
 				15DBC821227E6AB700421863 /* User.swift */,
+				15089701229F4BCA00F4335F /* EpisodeCounter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				1593C320226D1FCF00A7CCCF /* DispatchQueue.swift in Sources */,
 				15C143E5229DA3AE00193689 /* Array.swift in Sources */,
 				15C32A2D227F135900A8520F /* AllSeasonsPresenter.swift in Sources */,
+				15089702229F4BCA00F4335F /* EpisodeCounter.swift in Sources */,
 				15B77031226A85290044F9C6 /* AllSeasonsViewController.swift in Sources */,
 				15B7702B226A802B0044F9C6 /* String.swift in Sources */,
 				15B7703C226B54A20044F9C6 /* Season.swift in Sources */,
