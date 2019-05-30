@@ -32,7 +32,7 @@ class SeasonViewCell: UICollectionViewCell {
 
   private func setEpisodeCount(_ season: Season) -> String {
     let total = String(season.episode_count)
-    let current = String(EpisodeCounter.shared.countForSeason(number: season.season_number))
+    let current = String(User.shared.watchedEpisodesFor(season: season.season_number))
     return current + "/" + total
   }
 

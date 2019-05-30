@@ -3,7 +3,6 @@ import Foundation
 class EpisodeCounter {
 
   var counter = Array<Int>()
-  static let shared = EpisodeCounter()
 
   func countForSeason(number: Int) -> Int {
     return counter[number]

@@ -1,19 +1,23 @@
 class User {
   
   var userKey: String?
-  var watchedEpisodes = [Int]()
+  var watchedEpisodes = [[Int]]()
   static let shared = User()
 
-  func watchedEpisode(id: Int) {
-    if allReadyWatchedEpisode(id: id) {
-      watchedEpisodes.delete(id)
+  func watchedEpisode(id: Int, season: Int) {
+    if allReadyWatchedEpisode(id: id, season: season) {
+      watchedEpisodes[season].delete(id)
     } else {
-      watchedEpisodes.append(id)
+      watchedEpisodes[season].append(id)
     }
   }
 
-  func allReadyWatchedEpisode(id: Int) -> Bool {
-    return watchedEpisodes.contains(id)
+  func allReadyWatchedEpisode(id: Int, season: Int) -> Bool {
+    return watchedEpisodes[season].contains(id)
+  }
+
+  func watchedEpisodesFor(season: Int) -> Int {
+    return watchedEpisodes[season].count
   }
 }
 

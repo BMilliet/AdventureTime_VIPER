@@ -12,7 +12,6 @@ class AllSeasonsViewController: UIViewController, AllSeasonsViewControllerDelega
   init(seasonsList: AllSeasons, presenter: AllSeasonsPresenter){
     self.seasonsList = seasonsList
     self.presenter = presenter
-    EpisodeCounter.shared.counter = Array(repeating: 0, count: seasonsList.total())
     super.init(nibName: NibManager.allSeasons.viewSelected(), bundle:nil)
   }
 
@@ -26,9 +25,9 @@ class AllSeasonsViewController: UIViewController, AllSeasonsViewControllerDelega
     registerCell()
     setUpView()
   }
-
+//refactor
   func goToAllEpisodes(_ list: AllEpisodes) {
-    Router(navigation: navigationController).goToAllEpisodesView(with: list)
+    Router(navigation: navigationController).goToAllEpisodesView(with: list, season: presenter.seasonNumber!)
   }
 
   private func setUpView() {

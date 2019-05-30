@@ -28,6 +28,7 @@ class LoginPresenter: Presentable {
       case .success(let object):
         DispatchQueue.executeFromMainThread {
           self.onSuccessRequest(with: object)
+          User.shared.watchedEpisodes = [[Int]](repeating: [], count: object.total())
           User.shared.userKey = key
         }
       case .failure(let error):

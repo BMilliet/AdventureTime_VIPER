@@ -7,10 +7,11 @@ class EpisodesViewController: UIViewController {
   @IBOutlet weak var backButton: UIButton!
 
   var episodesList: AllEpisodes
-
+  let seasonNumber: Int
   
-  init(episodesList: AllEpisodes){
+  init(episodesList: AllEpisodes, seasonNumber: Int){
     self.episodesList = episodesList
+    self.seasonNumber = seasonNumber
     super.init(nibName: NibManager.seasonEpisodes.viewSelected(), bundle:nil)
   }
 
@@ -50,7 +51,7 @@ extension EpisodesViewController: UITableViewDelegate, UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: EpisodeViewCell.identifier, for: indexPath) as! EpisodeViewCell
 
     let episode = episodesList.episodes[indexPath.row]
-    cell.initializeCell(with: episode)
+    cell.initializeCell(with: episode, season: seasonNumber)
     
     return cell
   }

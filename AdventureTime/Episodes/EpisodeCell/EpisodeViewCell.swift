@@ -10,6 +10,7 @@ class EpisodeViewCell: UITableViewCell {
 
   static let currentHeight = CGFloat(160)
   let customImage = CustomUIImage()
+  var seasonNumber: Int?
   var episodeId: Int?
   var watched = false
 
@@ -18,7 +19,8 @@ class EpisodeViewCell: UITableViewCell {
     return String(describing: EpisodeViewCell.self)
   }
 
-  func initializeCell(with episode: Episode) {
+  func initializeCell(with episode: Episode, season: Int) {
+    seasonNumber = season
     populate(with: episode)
     enableIconAction()
     switchStatus(episode.id)
@@ -49,9 +51,9 @@ class EpisodeViewCell: UITableViewCell {
                           imagePlace: episodeImage,
                           placeHolder: #imageLiteral(resourceName: "placeholder-img"))
   }
-
+// refactor
   private func switchStatus(_ id: Int) {
-    if User.shared.allReadyWatchedEpisode(id: id) {
+    if User.shared.allReadyWatchedEpisode(id: id, season: seasonNumber!) {
       watchIcon.backgroundColor = .blue
       watched = true
     } else {
@@ -59,10 +61,10 @@ class EpisodeViewCell: UITableViewCell {
       watched = false
     }
   }
-
+// refactor
   @objc private func tapOnWatched() {
     if let id = episodeId {
-      User.shared.watchedEpisode(id: id)
+      User.shared.watchedEpisode(id: id, season: seasonNumber!)
       switchStatus(id)
     }
   }

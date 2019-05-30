@@ -4,8 +4,10 @@ import UIKit
 class AllSeasonsPresenter: Presentable {
 
   var delegate: AllSeasonsViewControllerDelegate?
+  var seasonNumber: Int?
 
   func makeRequestWith(number: Int) {
+    seasonNumber = number
     let key = User.shared.userKey!
     let url = UrlManager.season(number: number, userKey: key)
     API().makeRequest(url: url!, objectType: AllEpisodes.self) { (result: API.RequestResult) in

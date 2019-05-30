@@ -8,7 +8,7 @@ extension Assembler {
     return AllSeasonsViewController(seasonsList: allSeasons, presenter: presenter)
   }
 
-  func resolve(_ allEpisodes: AllEpisodes) -> EpisodesViewController {
-    return EpisodesViewController(episodesList: allEpisodes)
+  func resolve(_ allEpisodes: AllEpisodes, _ season: Int) -> EpisodesViewController {
+    return EpisodesViewController(episodesList: allEpisodes, seasonNumber: season)
   }
 }
