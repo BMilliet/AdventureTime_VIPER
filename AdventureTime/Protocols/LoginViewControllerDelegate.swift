@@ -1,5 +1,3 @@
-import UIKit
-
 protocol LoginViewControllerDelegate {
   func cleanField()
   func disableButton()

@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class LoginPresenter {
+class LoginPresenter: Presentable {
 
   let delegate: LoginViewControllerDelegate
   let validation = "validateKeyRegex".localized()
@@ -13,19 +13,23 @@ class LoginPresenter {
   func buttonPushed(with fieldValue: String) {
     delegate.startSpinnerAnimation()
     if fieldValue.matchPattern(validation) {
-      makeRequestWith(key: fieldValue)
+      User.shared.userKey = fieldValue
+      makeRequestWith()
       return
     }
     onFieldError()
   }
 
-  private func makeRequestWith(key: String) {
+  func makeRequestWith() {
+    let key = User.shared.userKey!
     let url = UrlManager.completeInfo(userKey: key)
     API().makeRequest(url: url!, objectType: AllSeasons.self) { (result: API.RequestResult) in
       switch result {
       case .success(let object):
         DispatchQueue.executeFromMainThread {
           self.onSuccessRequest(with: object)
+          User.shared.watchedEpisodes = [[Int]](repeating: [], count: object.total())
+          User.shared.userKey = key
         }
       case .failure(let error):
         DispatchQueue.executeFromMainThread {
@@ -35,12 +39,14 @@ class LoginPresenter {
     }
   }
 
-  private func onSuccessRequest(with list: AllSeasons) {
-    delegate.stopSpinnerAnimation()
-    delegate.goToAllSeasonsView(list)
+  func onSuccessRequest(with object: Decodable) {
+    if let list = object as? AllSeasons {
+      delegate.stopSpinnerAnimation()
+      delegate.goToAllSeasonsView(list)
+    }
   }
 
-  private func onFailRequest(with error: Error) {
+  func onFailRequest(with error: Error) {
     delegate.showErrorMessage()
     delegate.stopSpinnerAnimation()
     delegate.cleanField()

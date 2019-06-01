@@ -20,11 +20,11 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VSa-Jc-2QX">
-                        <rect key="frame" x="5" y="29.5" width="170" height="254"/>
+                        <rect key="frame" x="5" y="24.5" width="170" height="259.5"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Season 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oa-3e-jeK">
-                        <rect key="frame" x="5" y="0.0" width="170" height="25"/>
-                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                        <rect key="frame" x="5" y="0.0" width="170" height="19.5"/>
+                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -48,15 +48,15 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="VSa-Jc-2QX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="6hl-hS-GTh"/>
+                <constraint firstItem="VSa-Jc-2QX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="III-WK-W6r"/>
+                <constraint firstAttribute="bottom" secondItem="VSa-Jc-2QX" secondAttribute="bottom" constant="16" id="Npm-QL-4yG"/>
                 <constraint firstItem="0oa-3e-jeK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="OR5-VR-wmo"/>
                 <constraint firstItem="PKV-6B-KMM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="WbM-EG-49m"/>
+                <constraint firstAttribute="trailing" secondItem="VSa-Jc-2QX" secondAttribute="trailing" constant="5" id="Xrv-EF-fdH"/>
                 <constraint firstAttribute="bottom" secondItem="PKV-6B-KMM" secondAttribute="bottom" id="Yin-JS-PMO"/>
                 <constraint firstItem="0oa-3e-jeK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="c5i-XE-m9c"/>
-                <constraint firstItem="VSa-Jc-2QX" firstAttribute="top" secondItem="0oa-3e-jeK" secondAttribute="bottom" constant="4.5" id="i6N-Ph-oCm"/>
-                <constraint firstItem="PKV-6B-KMM" firstAttribute="top" secondItem="VSa-Jc-2QX" secondAttribute="bottom" id="srF-24-4uz"/>
+                <constraint firstItem="VSa-Jc-2QX" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="bottom" constant="-275.5" id="ua5-Ut-YOk"/>
                 <constraint firstAttribute="trailing" secondItem="PKV-6B-KMM" secondAttribute="trailing" constant="8" id="wfe-SG-sjk"/>
-                <constraint firstAttribute="trailing" secondItem="VSa-Jc-2QX" secondAttribute="trailing" constant="5" id="xkO-wt-HUI"/>
                 <constraint firstAttribute="trailing" secondItem="0oa-3e-jeK" secondAttribute="trailing" constant="5" id="zdH-hs-teD"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>

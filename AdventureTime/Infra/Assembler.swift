@@ -4,6 +4,11 @@ protocol Assembler {
 
 extension Assembler {
   func resolve(_ allSeasons: AllSeasons) -> AllSeasonsViewController {
-    return AllSeasonsViewController(seasonsList: allSeasons)
+    let presenter = AllSeasonsPresenter()
+    return AllSeasonsViewController(seasonsList: allSeasons, presenter: presenter)
+  }
+
+  func resolve(_ allEpisodes: AllEpisodes, _ season: Int) -> EpisodesViewController {
+    return EpisodesViewController(episodesList: allEpisodes, seasonNumber: season)
   }
 }

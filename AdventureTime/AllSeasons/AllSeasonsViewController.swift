@@ -1,23 +1,38 @@
 import UIKit
 
-class AllSeasonsViewController: UIViewController {
+class AllSeasonsViewController: UIViewController, AllSeasonsViewControllerDelegate {
 
   @IBOutlet weak var logoutButton: UIButton!
   @IBOutlet weak var collectionView: UICollectionView!
 
   var seasonsList: AllSeasons
+  var presenter: AllSeasonsPresenter
 
-  init(seasonsList: AllSeasons){
+  
+  init(seasonsList: AllSeasons, presenter: AllSeasonsPresenter){
     self.seasonsList = seasonsList
+    self.presenter = presenter
     super.init(nibName: NibManager.allSeasons.viewSelected(), bundle:nil)
   }
 
-  required init?(coder aDecoder: NSCoder) {fatalError()}
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("allSeasonsViewControllerError".localized())
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    presenter.delegate = self
     registerCell()
     setUpView()
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    collectionView.reloadData()
+  }
+
+  func goToAllEpisodes(_ list: AllEpisodes) {
+    Router(navigation: navigationController).goToAllEpisodesView(with: list, season: presenter.getSeasonNumber())
   }
 
   private func setUpView() {
@@ -31,6 +46,7 @@ class AllSeasonsViewController: UIViewController {
     collectionView.register(cell, forCellWithReuseIdentifier: SeasonViewCell.identifier)
   }
 }
+
 
 extension AllSeasonsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -55,11 +71,8 @@ extension AllSeasonsViewController: UICollectionViewDelegate, UICollectionViewDa
     return UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
   }
 
-
-
-//  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//    let movieId = movieList?.items[indexPath.row].id
-//    let url = UrlManager().movieDetails(id: movieId!, userKey: dao.userKey)
-//    API.makeRequest(url: url!, onSuccess: setMovie)
-//  }
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let season = seasonsList.seasons[indexPath.row].season_number
+    presenter.makeRequestWith(number: season)
+  }
 }
