@@ -25,9 +25,14 @@ class AllSeasonsViewController: UIViewController, AllSeasonsViewControllerDelega
     registerCell()
     setUpView()
   }
-//refactor
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    collectionView.reloadData()
+  }
+
   func goToAllEpisodes(_ list: AllEpisodes) {
-    Router(navigation: navigationController).goToAllEpisodesView(with: list, season: presenter.seasonNumber!)
+    Router(navigation: navigationController).goToAllEpisodesView(with: list, season: presenter.getSeasonNumber())
   }
 
   private func setUpView() {

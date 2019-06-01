@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		15089702229F4BCA00F4335F /* EpisodeCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15089701229F4BCA00F4335F /* EpisodeCounter.swift */; };
 		150CA5E2227B2DD700F51A6D /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150CA5E1227B2DD700F51A6D /* Assembler.swift */; };
 		151700FB227DBFDB00A27025 /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151700F9227DBFDB00A27025 /* EpisodesViewController.swift */; };
 		151700FC227DBFDB00A27025 /* EpisodesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 151700FA227DBFDB00A27025 /* EpisodesViewController.xib */; };
@@ -19,6 +18,8 @@
 		1593C320226D1FCF00A7CCCF /* DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1593C31F226D1FCF00A7CCCF /* DispatchQueue.swift */; };
 		15A513532276690100C889DA /* SeasonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A513512276690100C889DA /* SeasonViewCell.swift */; };
 		15A513542276690100C889DA /* SeasonViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15A513522276690100C889DA /* SeasonViewCell.xib */; };
+		15B3CC0822A33E130044B913 /* EpisodeCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B3CC0722A33E130044B913 /* EpisodeCellPresenter.swift */; };
+		15B3CC0A22A3438B0044B913 /* EpisodeViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B3CC0922A3438B0044B913 /* EpisodeViewCellDelegate.swift */; };
 		15B4CBD8226EA0D400A0B3F3 /* NibManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B4CBD7226EA0D400A0B3F3 /* NibManager.swift */; };
 		15B76FF1226A6E0A0044F9C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B76FF0226A6E0A0044F9C6 /* AppDelegate.swift */; };
 		15B76FF8226A6E0B0044F9C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15B76FF7226A6E0B0044F9C6 /* Assets.xcassets */; };
@@ -66,7 +67,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		15089701229F4BCA00F4335F /* EpisodeCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCounter.swift; sourceTree = "<group>"; };
 		150CA5E1227B2DD700F51A6D /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
 		151700F9227DBFDB00A27025 /* EpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewController.swift; sourceTree = "<group>"; };
 		151700FA227DBFDB00A27025 /* EpisodesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodesViewController.xib; sourceTree = "<group>"; };
@@ -78,6 +78,8 @@
 		1593C31F226D1FCF00A7CCCF /* DispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueue.swift; sourceTree = "<group>"; };
 		15A513512276690100C889DA /* SeasonViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonViewCell.swift; sourceTree = "<group>"; };
 		15A513522276690100C889DA /* SeasonViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeasonViewCell.xib; sourceTree = "<group>"; };
+		15B3CC0722A33E130044B913 /* EpisodeCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCellPresenter.swift; sourceTree = "<group>"; };
+		15B3CC0922A3438B0044B913 /* EpisodeViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewCellDelegate.swift; sourceTree = "<group>"; };
 		15B4CBD7226EA0D400A0B3F3 /* NibManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibManager.swift; sourceTree = "<group>"; };
 		15B76FED226A6E0A0044F9C6 /* AdventureTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdventureTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15B76FF0226A6E0A0044F9C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		151700FD227DC0E400A27025 /* EpisodeCell */ = {
 			isa = PBXGroup;
 			children = (
+				15B3CC0722A33E130044B913 /* EpisodeCellPresenter.swift */,
 				151700FE227DC11000A27025 /* EpisodeViewCell.swift */,
 				151700FF227DC11000A27025 /* EpisodeViewCell.xib */,
 			);
@@ -278,7 +281,6 @@
 				15170102227DC14100A27025 /* Episode.swift */,
 				15170104227DC9E900A27025 /* AllEpisodes.swift */,
 				15DBC821227E6AB700421863 /* User.swift */,
-				15089701229F4BCA00F4335F /* EpisodeCounter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -289,6 +291,7 @@
 				159027C0226C095C00B3D493 /* LoginViewControllerDelegate.swift */,
 				15C32A2F227F142E00A8520F /* Presentable.swift */,
 				15C32A31227F20AC00A8520F /* AllSeasonsViewControllerDelegate.swift */,
+				15B3CC0922A3438B0044B913 /* EpisodeViewCellDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -454,9 +457,9 @@
 				15B77040226BA97B0044F9C6 /* Router.swift in Sources */,
 				15A513532276690100C889DA /* SeasonViewCell.swift in Sources */,
 				1593C320226D1FCF00A7CCCF /* DispatchQueue.swift in Sources */,
+				15B3CC0A22A3438B0044B913 /* EpisodeViewCellDelegate.swift in Sources */,
 				15C143E5229DA3AE00193689 /* Array.swift in Sources */,
 				15C32A2D227F135900A8520F /* AllSeasonsPresenter.swift in Sources */,
-				15089702229F4BCA00F4335F /* EpisodeCounter.swift in Sources */,
 				15B77031226A85290044F9C6 /* AllSeasonsViewController.swift in Sources */,
 				15B7702B226A802B0044F9C6 /* String.swift in Sources */,
 				15B7703C226B54A20044F9C6 /* Season.swift in Sources */,
@@ -468,6 +471,7 @@
 				15E25C0E229B660700EA0E26 /* CustomUIImage.swift in Sources */,
 				150CA5E2227B2DD700F51A6D /* Assembler.swift in Sources */,
 				15C32A30227F142E00A8520F /* Presentable.swift in Sources */,
+				15B3CC0822A33E130044B913 /* EpisodeCellPresenter.swift in Sources */,
 				15B76FF1226A6E0A0044F9C6 /* AppDelegate.swift in Sources */,
 				15170100227DC11000A27025 /* EpisodeViewCell.swift in Sources */,
 				15B77025226A733F0044F9C6 /* UIViewController.swift in Sources */,

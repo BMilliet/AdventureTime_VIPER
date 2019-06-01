@@ -1,6 +1,6 @@
 import UIKit
 
-class EpisodeViewCell: UITableViewCell {
+class EpisodeViewCell: UITableViewCell, EpisodeViewCellDelegate {
 
   @IBOutlet weak var episodeNumber: UILabel!
   @IBOutlet weak var episodeTitle: UILabel!
@@ -9,6 +9,7 @@ class EpisodeViewCell: UITableViewCell {
   @IBOutlet weak var watchIcon: UIView!
 
   static let currentHeight = CGFloat(160)
+  let presenter = EpisodeCellPresenter()
   let customImage = CustomUIImage()
   var seasonNumber: Int?
   var episodeId: Int?
@@ -23,7 +24,8 @@ class EpisodeViewCell: UITableViewCell {
     seasonNumber = season
     populate(with: episode)
     enableIconAction()
-    switchStatus(episode.id)
+    setUpPresenter()
+    presenter.switchStatus(episode.id)
   }
 
   override func prepareForReuse() {
@@ -31,6 +33,16 @@ class EpisodeViewCell: UITableViewCell {
     episodeTitle.text?.removeAll()
     episodeNumber.text?.removeAll()
     episodeOverview.text?.removeAll()
+  }
+
+  func watchedStatus() {
+    watchIcon.backgroundColor = .blue
+    watched = true
+  }
+
+  func notWatchedStatus() {
+    watchIcon.backgroundColor = .green
+    watched = false
   }
 
   private func populate(with episode: Episode) {
@@ -51,21 +63,13 @@ class EpisodeViewCell: UITableViewCell {
                           imagePlace: episodeImage,
                           placeHolder: #imageLiteral(resourceName: "placeholder-img"))
   }
-// refactor
-  private func switchStatus(_ id: Int) {
-    if User.shared.allReadyWatchedEpisode(id: id, season: seasonNumber!) {
-      watchIcon.backgroundColor = .blue
-      watched = true
-    } else {
-      watchIcon.backgroundColor = .green
-      watched = false
-    }
+
+  private func setUpPresenter() {
+    presenter.delegate = self
+    presenter.seasonNumber = seasonNumber
   }
-// refactor
+
   @objc private func tapOnWatched() {
-    if let id = episodeId {
-      User.shared.watchedEpisode(id: id, season: seasonNumber!)
-      switchStatus(id)
-    }
+    presenter.tapOnWatched(with: episodeId)
   }
 }

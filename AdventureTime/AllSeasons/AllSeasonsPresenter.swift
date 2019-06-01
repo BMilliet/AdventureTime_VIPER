@@ -4,7 +4,7 @@ import UIKit
 class AllSeasonsPresenter: Presentable {
 
   var delegate: AllSeasonsViewControllerDelegate?
-  var seasonNumber: Int?
+  var seasonNumber = 0
 
   func makeRequestWith(number: Int) {
     seasonNumber = number
@@ -32,5 +32,9 @@ class AllSeasonsPresenter: Presentable {
     if let list = object as? AllEpisodes {
       delegate?.goToAllEpisodes(list)
     }
+  }
+
+  func getSeasonNumber() -> Int {
+    return self.seasonNumber
   }
 }
