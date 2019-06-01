@@ -7,7 +7,7 @@ class SeasonViewCell: UICollectionViewCell {
   @IBOutlet weak var episodeCount: UILabel!
   @IBOutlet weak var airDate: UILabel!
 
-  static let currentHeight = CGFloat(250)
+  static let currentHeight = CGFloat(300)
   static let currentWidth = CGFloat(150)
   let customImage = CustomUIImage()
 
