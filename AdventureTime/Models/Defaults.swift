@@ -5,7 +5,9 @@ class Defaults {
   private let defaults = UserDefaults.standard
   private let user = User.shared
 
-  func userLoggedIn() {
+  func initializeSession(with key: String, seasonNumber: Int) {
+    user.userKey = key
+    user.watchedEpisodes = [[Int]](repeating: [], count: seasonNumber)
     setUserLoggedStatus()
     saveUserKey()
   }
@@ -13,6 +15,10 @@ class Defaults {
   func saveUser() {
     saveUserKey()
     saveEpisodes()
+  }
+
+  func saveEpisodes() {
+    defaults.set(user.watchedEpisodes, forKey: "episodes")
   }
 
   func recoverSession() {
@@ -38,10 +44,6 @@ class Defaults {
 
   private func getUserKey() -> String {
     return defaults.string(forKey: "userKey") ?? ""
-  }
-
-  private func saveEpisodes() {
-    defaults.set(user.watchedEpisodes, forKey: "episodes")
   }
 
   private func getSavedEpisodes() -> [[Int]] {
