@@ -21,6 +21,7 @@ class EpisodeViewCell: UITableViewCell, EpisodeViewCellDelegate {
   }
 
   func initializeCell(with episode: Episode, season: Int) {
+    selectionStyle = .none
     seasonNumber = season
     populate(with: episode)
     enableIconAction()
