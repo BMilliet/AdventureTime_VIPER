@@ -6,8 +6,8 @@ class EpisodeViewCell: UITableViewCell, EpisodeViewCellDelegate {
   @IBOutlet weak var episodeTitle: UILabel!
   @IBOutlet weak var episodeOverview: UITextView!
   @IBOutlet weak var episodeImage: UIImageView!
-  @IBOutlet weak var watchIcon: UIView!
-
+  @IBOutlet weak var statusIcon: UIImageView!
+  
   static let currentHeight = CGFloat(160)
   let presenter = EpisodeCellPresenter()
   let customImage = CustomUIImage()
@@ -37,12 +37,12 @@ class EpisodeViewCell: UITableViewCell, EpisodeViewCellDelegate {
   }
 
   func watchedStatus() {
-    watchIcon.backgroundColor = .blue
+    statusIcon.image = #imageLiteral(resourceName: "check")
     watched = true
   }
 
   func notWatchedStatus() {
-    watchIcon.backgroundColor = .green
+    statusIcon.image = #imageLiteral(resourceName: "play")
     watched = false
   }
 
@@ -56,7 +56,8 @@ class EpisodeViewCell: UITableViewCell, EpisodeViewCellDelegate {
 
   private func enableIconAction() {
     let gesture = UITapGestureRecognizer(target: self, action: #selector(tapOnWatched))
-    watchIcon.addGestureRecognizer(gesture)
+    statusIcon.isUserInteractionEnabled = true
+    statusIcon.addGestureRecognizer(gesture)
   }
 
   private func getPosterImage(for episode: Episode) {

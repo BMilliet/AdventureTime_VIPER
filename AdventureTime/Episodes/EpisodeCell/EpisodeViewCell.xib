@@ -59,23 +59,22 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MC9-1l-3iX">
-                        <rect key="frame" x="262" y="11" width="40" height="29"/>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.0016884094269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fhz-TF-mUE">
+                        <rect key="frame" x="279" y="11" width="35" height="35"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="40" id="kYe-vH-LmP"/>
-                            <constraint firstAttribute="height" constant="29" id="ztJ-hq-ihc"/>
+                            <constraint firstAttribute="width" constant="35" id="JA7-sb-seR"/>
+                            <constraint firstAttribute="height" constant="35" id="eri-zt-DVv"/>
                         </constraints>
-                    </view>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" red="0.23518458549999999" green="0.23518458549999999" blue="0.23518458549999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="MC9-1l-3iX" secondAttribute="trailing" constant="12" id="Cxd-Xb-mQQ"/>
-                    <constraint firstItem="MC9-1l-3iX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="GM6-A8-xkD"/>
                     <constraint firstItem="lmW-jh-7Nx" firstAttribute="top" secondItem="vrn-tD-Rst" secondAttribute="bottom" constant="13" id="ILn-Yt-BaM"/>
                     <constraint firstItem="lmW-jh-7Nx" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="a1B-ek-fCU"/>
                     <constraint firstItem="DFG-0m-vaN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="eRa-NJ-yun"/>
                     <constraint firstItem="vrn-tD-Rst" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="eV8-a8-HEu"/>
+                    <constraint firstItem="fhz-TF-mUE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="g08-fu-CgA"/>
+                    <constraint firstItem="fhz-TF-mUE" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="ibM-Cx-yEY"/>
                     <constraint firstItem="DFG-0m-vaN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="ile-uh-Pzn"/>
                     <constraint firstItem="rnf-cD-Tkr" firstAttribute="leading" secondItem="lmW-jh-7Nx" secondAttribute="trailing" constant="8" id="r9a-jN-Yfa"/>
                     <constraint firstItem="vrn-tD-Rst" firstAttribute="leading" secondItem="DFG-0m-vaN" secondAttribute="trailing" constant="8" id="wZ3-gQ-Q8B"/>
@@ -90,7 +89,7 @@
                 <outlet property="episodeNumber" destination="DFG-0m-vaN" id="Dvp-rT-eC1"/>
                 <outlet property="episodeOverview" destination="rnf-cD-Tkr" id="U03-bj-34h"/>
                 <outlet property="episodeTitle" destination="vrn-tD-Rst" id="iEn-70-ajQ"/>
-                <outlet property="watchIcon" destination="MC9-1l-3iX" id="ztf-8H-oxA"/>
+                <outlet property="statusIcon" destination="fhz-TF-mUE" id="X49-Hn-GBC"/>
             </connections>
             <point key="canvasLocation" x="-115.2" y="61.169415292353825"/>
         </tableViewCell>
