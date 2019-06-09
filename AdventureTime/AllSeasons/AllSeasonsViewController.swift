@@ -31,6 +31,11 @@ class AllSeasonsViewController: UIViewController, AllSeasonsViewControllerDelega
     collectionView.reloadData()
   }
 
+  @IBAction func logoutAction(_ sender: UIButton) {
+    Defaults().userLoggedout()
+    navigationController?.popViewController(animated: true)
+  }
+
   func goToAllEpisodes(_ list: AllEpisodes) {
     Router(navigation: navigationController).goToAllEpisodesView(with: list, season: presenter.getSeasonNumber())
   }

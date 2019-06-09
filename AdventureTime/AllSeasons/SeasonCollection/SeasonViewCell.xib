@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="180" height="300"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VSa-Jc-2QX">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VSa-Jc-2QX">
                         <rect key="frame" x="5" y="24.5" width="170" height="259.5"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Season 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oa-3e-jeK">
@@ -55,7 +55,7 @@
                 <constraint firstAttribute="trailing" secondItem="VSa-Jc-2QX" secondAttribute="trailing" constant="5" id="Xrv-EF-fdH"/>
                 <constraint firstAttribute="bottom" secondItem="PKV-6B-KMM" secondAttribute="bottom" id="Yin-JS-PMO"/>
                 <constraint firstItem="0oa-3e-jeK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="c5i-XE-m9c"/>
-                <constraint firstItem="VSa-Jc-2QX" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="bottom" constant="-275.5" id="ua5-Ut-YOk"/>
+                <constraint firstItem="VSa-Jc-2QX" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="bottom" constant="-275.5" id="dmn-cw-1rL"/>
                 <constraint firstAttribute="trailing" secondItem="PKV-6B-KMM" secondAttribute="trailing" constant="8" id="wfe-SG-sjk"/>
                 <constraint firstAttribute="trailing" secondItem="0oa-3e-jeK" secondAttribute="trailing" constant="5" id="zdH-hs-teD"/>
             </constraints>

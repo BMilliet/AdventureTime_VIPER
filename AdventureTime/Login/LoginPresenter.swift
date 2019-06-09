@@ -3,24 +3,26 @@ import UIKit
 
 class LoginPresenter: Presentable {
 
+  let defaults = Defaults()
   let delegate: LoginViewControllerDelegate
   let validation = "validateKeyRegex".localized()
 
   init(delegate: LoginViewControllerDelegate) {
     self.delegate = delegate
+    checkForLastSession()
   }
 
   func buttonPushed(with fieldValue: String) {
     delegate.startSpinnerAnimation()
     if fieldValue.matchPattern(validation) {
       User.shared.userKey = fieldValue
-      makeRequestWith()
-      return
+      makeRequest()
+    } else {
+      onFieldError()
     }
-    onFieldError()
   }
 
-  func makeRequestWith() {
+  func makeRequest() {
     let key = User.shared.userKey!
     let url = UrlManager.completeInfo(userKey: key)
     API().makeRequest(url: url!, objectType: AllSeasons.self) { (result: API.RequestResult) in
@@ -28,8 +30,7 @@ class LoginPresenter: Presentable {
       case .success(let object):
         DispatchQueue.executeFromMainThread {
           self.onSuccessRequest(with: object)
-          User.shared.watchedEpisodes = [[Int]](repeating: [], count: object.total())
-          User.shared.userKey = key
+          self.setUserForFirstLoggin(with: key, object: object)
         }
       case .failure(let error):
         DispatchQueue.executeFromMainThread {
@@ -59,5 +60,19 @@ class LoginPresenter: Presentable {
     delegate.stopSpinnerAnimation()
     delegate.cleanField()
     delegate.disableButton()
+  }
+
+  private func setUserForFirstLoggin(with key: String, object: AllSeasons) {
+    if !defaults.isUserLogged() {
+      defaults.initializeSession(with: key, seasonNumber: object.total())
+      defaults.saveEpisodes()
+    }
+  }
+
+  private func checkForLastSession() {
+    if defaults.isUserLogged() {
+      defaults.recoverSession()
+      makeRequest()
+    }
   }
 }

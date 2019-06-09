@@ -1,3 +1,5 @@
+import Foundation
+
 class User {
   
   var userKey: String?
@@ -20,5 +22,3 @@ class User {
     return watchedEpisodes[season].count
   }
 }
-
-

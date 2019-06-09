@@ -4,6 +4,6 @@ struct Episode: Decodable {
   let id: Int
   let name: String
   let overview: String
-  let still_path: String
+  let still_path: String?
   let vote_average: Double
 }
