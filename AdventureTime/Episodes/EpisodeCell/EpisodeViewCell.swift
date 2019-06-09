@@ -61,9 +61,7 @@ class EpisodeViewCell: UITableViewCell, EpisodeViewCellDelegate {
   }
 
   private func getPosterImage(for episode: Episode) {
-    customImage.loadAsync(with: episode.still_path,
-                          imagePlace: episodeImage,
-                          placeHolder: #imageLiteral(resourceName: "placeholder-img"))
+    presenter.getPosterImage(for: customImage, with: episode, at: episodeImage)
   }
 
   private func setUpPresenter() {

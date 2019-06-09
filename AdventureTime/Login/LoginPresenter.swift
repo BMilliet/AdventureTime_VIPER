@@ -16,10 +16,10 @@ class LoginPresenter: Presentable {
     delegate.startSpinnerAnimation()
     if fieldValue.matchPattern(validation) {
       User.shared.userKey = fieldValue
-      makeRequestWith()
-      return
+      makeRequest()
+    } else {
+      onFieldError()
     }
-    onFieldError()
   }
 
   func makeRequest() {
@@ -65,6 +65,7 @@ class LoginPresenter: Presentable {
   private func setUserForFirstLoggin(with key: String, object: AllSeasons) {
     if !defaults.isUserLogged() {
       defaults.initializeSession(with: key, seasonNumber: object.total())
+      defaults.saveEpisodes()
     }
   }
 

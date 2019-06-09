@@ -30,12 +30,23 @@ class Defaults {
     return defaults.bool(forKey: "logged")
   }
 
+  func userLoggedout() {
+    setUserLoggedoutStatus()
+    user.userKey = ""
+    user.watchedEpisodes = [[Int]]()
+    saveUser()
+  }
+
   private func saveUserKey() {
     defaults.set(user.userKey, forKey: "userKey")
   }
 
   private func setUserLoggedStatus() {
     defaults.set(true, forKey: "logged")
+  }
+
+  private func setUserLoggedoutStatus() {
+    defaults.set(false, forKey: "logged")
   }
 
   private func getUserKey() -> String {
