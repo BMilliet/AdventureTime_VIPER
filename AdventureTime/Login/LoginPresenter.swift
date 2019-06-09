@@ -30,7 +30,7 @@ class LoginPresenter: Presentable {
       case .success(let object):
         DispatchQueue.executeFromMainThread {
           self.onSuccessRequest(with: object)
-          self.defaults.initializeSession(with: key, seasonNumber: object.total())
+          self.setUserForFirstLoggin(with: key, object: object)
         }
       case .failure(let error):
         DispatchQueue.executeFromMainThread {
@@ -60,6 +60,12 @@ class LoginPresenter: Presentable {
     delegate.stopSpinnerAnimation()
     delegate.cleanField()
     delegate.disableButton()
+  }
+
+  private func setUserForFirstLoggin(with key: String, object: AllSeasons) {
+    if !defaults.isUserLogged() {
+      defaults.initializeSession(with: key, seasonNumber: object.total())
+    }
   }
 
   private func checkForLastSession() {

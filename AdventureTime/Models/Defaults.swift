@@ -22,16 +22,12 @@ class Defaults {
   }
 
   func recoverSession() {
-    setUser()
+    user.userKey = getUserKey()
+    user.watchedEpisodes = getSavedEpisodes()
   }
 
   func isUserLogged() -> Bool {
     return defaults.bool(forKey: "logged")
-  }
-
-  private func setUser() {
-    user.userKey = getUserKey()
-    user.watchedEpisodes = getSavedEpisodes()
   }
 
   private func saveUserKey() {
